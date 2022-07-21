@@ -6,19 +6,60 @@ package mr
 // remember to capitalize all names.
 //
 
-import "os"
-import "strconv"
+import (
+	"os"
+	"strconv"
+)
 
 //
 // example to show how to declare the arguments
 // and reply for an RPC.
 //
+// type JobType int
+// const (
+// 	MapJob = iota
+// 	ReduceJob
+// 	WaitingJob
+// 	KillJob
+// )
 
-type Job struct {
-	
-}
+// type Job struct {
+// 	JobType JobType
+// 	InputFile []string
+// 	JobId int
+// 	ReducerNum int
+// }
 
+// type Condition int
+// const (
+// 	MapPhase = iota
+// 	ReducePhase
+// 	AllDone
+// )
 
+// type JobCondition int
+// const (
+// 	JobWorking = iota
+// 	JobWaiting
+// 	JobDone
+// )
+
+// type JobMetaInfo struct {
+// 	condition JobCondition
+// 	StartTime time.Time
+// 	JobPtr *Job
+// }
+
+// type JobMetaHoder struct {
+// 	MetaMap map[int]*JobMetaInfo
+// }
+
+const (
+	WorkerWait = 0
+	MapPhase = 1
+	ReducePhase = 2
+	FinshPhase = 3
+)
 
 
 type ExampleArgs struct {
@@ -29,26 +70,31 @@ type ExampleReply struct {
 	Y int
 }
 
-type ReqMap struct {
+type Args struct {
 
 }
 
-type ResMap struct {
-	filename string
-	nReduce int
-	remain bool
-	done bool
+type Reply struct {
+	MapFile string
+	ReduceFiles []string
+	NReduce int
+	Remain bool
+	JobId int
+	IntermediateFiles []string
+	WorkingType int
 }
 
-type ReqReduce struct {
+// type ReqReduce struct {
 
-}
+// }
 
-type ResReduce struct {
-	filename string
-	remain bool
-	done bool
-}
+// type ResReduce struct {
+// 	ReduceFiles []string
+// 	Remain bool
+// 	ReduceId int
+// 	// OutFileName string
+// 	WorkingType int
+// }
 
 
 // Add your RPC definitions here.
@@ -63,3 +109,4 @@ func coordinatorSock() string {
 	s += strconv.Itoa(os.Getuid())
 	return s
 }
+

@@ -18,8 +18,11 @@ import "strconv"
 import "time"
 
 func maybeCrash() {
+	// max: 1000
 	max := big.NewInt(1000)
+	// fmt.Println("max: ", max)
 	rr, _ := crand.Int(crand.Reader, max)
+	// fmt.Println("rr: ", rr)
 	if rr.Int64() < 330 {
 		// crash!
 		os.Exit(1)
@@ -27,18 +30,22 @@ func maybeCrash() {
 		// delay for a while.
 		maxms := big.NewInt(10 * 1000)
 		ms, _ := crand.Int(crand.Reader, maxms)
+		// fmt.Println("ms: ", ms)
 		time.Sleep(time.Duration(ms.Int64()) * time.Millisecond)
 	}
 }
 
 func Map(filename string, contents string) []mr.KeyValue {
+	// fmt.Println("move into map", filename)
 	maybeCrash()
+	// fmt.Println("start map", filename)
 
 	kva := []mr.KeyValue{}
 	kva = append(kva, mr.KeyValue{"a", filename})
 	kva = append(kva, mr.KeyValue{"b", strconv.Itoa(len(filename))})
 	kva = append(kva, mr.KeyValue{"c", strconv.Itoa(len(contents))})
 	kva = append(kva, mr.KeyValue{"d", "xyzzy"})
+	// fmt.Println("Map done", filename)
 	return kva
 }
 
