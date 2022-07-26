@@ -19,13 +19,17 @@ package raft
 
 import (
 	//	"bytes"
+	"fmt"
+	"math/rand"
 	"sync"
 	"sync/atomic"
+	"time"
+
+	// "fmt"
 
 	//	"6.824/labgob"
 	"6.824/labrpc"
 )
-
 
 //
 // as each Raft peer becomes aware that successive log entries are
@@ -38,6 +42,17 @@ import (
 // snapshots) on the applyCh, but set CommandValid to false for these
 // other uses.
 //
+
+// var electionTimeout = time.Duration(200) * time.Millisecond	// 心跳超时时间
+
+// type State []byte
+const (
+	None = -1
+	leader = 0
+	candidate = 1
+	follower = 2
+)
+
 type ApplyMsg struct {
 	CommandValid bool
 	Command      interface{}
@@ -50,6 +65,11 @@ type ApplyMsg struct {
 	SnapshotIndex int
 }
 
+type LogEntry struct {
+	Command string
+	Term int
+}
+
 //
 // A Go object implementing a single Raft peer.
 //
@@ -59,6 +79,23 @@ type Raft struct {
 	persister *Persister          // Object to hold this peer's persisted state
 	me        int                 // this peer's index into peers[]
 	dead      int32               // set by Kill()
+
+	log []LogEntry
+
+	currentTerm int				  // 当前的任期
+	currentState int			  // 服务器当前的状态
+	votedFor int				  // 在当前任期内投票给了 谁
+	voteCount int				  // 当前获取到的选票的数目
+
+	commitIndex int				  // 最后一次提交的log的位置
+	lastApplied int				  // 最近一次的log
+	lastHeartBeat time.Time		  // 最近一次收到 HeartBeat 的时间
+
+	nextIndex[] int				  // 每个服务器需要发送给它的下一条日志的索引(初始化为leader最后一条日志索引+1)
+	matchIndex[] int			  // 每个服务器已复制给它的日志的最高索引值
+
+	leader int					  // 当前leader的位置
+
 
 	// Your data here (2A, 2B, 2C).
 	// Look at the paper's Figure 2 for a description of what
@@ -70,8 +107,8 @@ type Raft struct {
 // believes it is the leader.
 func (rf *Raft) GetState() (int, bool) {
 
-	var term int
-	var isleader bool
+	term := rf.currentTerm
+	isleader := rf.leader == rf.me
 	// Your code here (2A).
 	return term, isleader
 }
@@ -143,6 +180,10 @@ func (rf *Raft) Snapshot(index int, snapshot []byte) {
 //
 type RequestVoteArgs struct {
 	// Your data here (2A, 2B).
+	Term int
+	CondidateId int
+	LastLogIndex int
+	LastLogTerm int
 }
 
 //
@@ -151,6 +192,9 @@ type RequestVoteArgs struct {
 //
 type RequestVoteReply struct {
 	// Your data here (2A).
+	// 如果term < currentTerm 返回 currentTerm，否则返回term
+	Term int
+	IntvoteGranted bool
 }
 
 //
@@ -158,6 +202,36 @@ type RequestVoteReply struct {
 //
 func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Your code here (2A, 2B).
+	// 一个任期只能投一票
+	// 如果任期小于当前的任期，直接否决
+	if rf.currentTerm > args.Term || (rf.currentState == candidate && args.Term == rf.currentTerm) {
+		reply.Term = rf.currentTerm
+		reply.IntvoteGranted = false
+		// reply.term[rf.me] = rf.currentTerm
+		// reply.intvoteGranted[rf.me] = false
+		return
+	// } else if rf.currentTerm == args.Term {
+	// 	// 如果和自己的任期相同就投否决票
+	// 	reply.Term = rf.currentTerm
+	// 	reply.IntvoteGranted = false
+	} else {
+		// 如果自己当前的状态是candidate，根据请求者的term来判断是否更新任期，一个任期只能投一票
+		if rf.currentState == candidate && args.Term > rf.currentTerm {
+			rf.changeState(follower)
+		}
+		// 如果还没有投票的话, 更新term，记录自己在当前term投票给了谁
+		// if rf.votedFor != rf.me {
+			rf.votedFor = args.CondidateId
+			rf.currentTerm = args.Term
+			rf.voteCount = 0
+			reply.Term = args.Term
+			reply.IntvoteGranted = true
+			return
+		// }
+		// reply.Term = args.Term
+		// reply.IntvoteGranted = false
+		// return
+	}
 }
 
 //
@@ -232,7 +306,9 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 // should call killed() to check whether it should stop.
 //
 func (rf *Raft) Kill() {
-	atomic.StoreInt32(&rf.dead, 1)
+	if (!rf.killed()){
+		atomic.StoreInt32(&rf.dead, 1)
+	}
 	// Your code here, if desired.
 }
 
@@ -244,14 +320,148 @@ func (rf *Raft) killed() bool {
 // The ticker go routine starts a new election if this peer hasn't received
 // heartsbeats recently.
 func (rf *Raft) ticker() {
-	for rf.killed() == false {
-
+	for !rf.killed() {
 		// Your code here to check if a leader election should
 		// be started and to randomize sleeping time using
 		// time.Sleep().
+		// 先sleep一段时间，然后判断上一次收到心跳的时间是否超时
+		// TODO 这里的过期时间是要随机的
+		lastHeartBeat := rf.getLastHeartBeat()
+		i := 50 + rand.Intn(250)
+		// fmt.Println("sleep: ", i)
+		time.Sleep(time.Duration(i) * time.Millisecond)
+		if lastHeartBeat != rf.getLastHeartBeat() {
+			continue
+		}
+		// fmt.Println("election")
+		rf.election()
 
 	}
 }
+
+func (rf *Raft) election() {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	rf.changeState(candidate)
+	rf.voteCount++
+	// fmt.Println("voteCount: ", rf.voteCount)
+	rf.votedFor = rf.me
+	rf.currentTerm++
+	args := RequestVoteArgs{rf.currentTerm, rf.me, rf.lastApplied, rf.currentTerm}
+	// TODO 这里为什么不能启动一个线程去检查是否完成选举
+	// go rf.checkState()	// 启动一个线程检查一定时间之后是否赢得选举
+	// fmt.Println("peers:", len(rf.peers))
+	for serverNum := 0; serverNum < len(rf.peers); serverNum++ {
+		if serverNum != rf.me {
+			// fmt.Println(i)
+			go func (server int, args RequestVoteArgs) {
+				reply := RequestVoteReply{}
+				if rf.sendRequestVote(server, &args, &reply) {
+					// fmt.Println("election voteCount: ", rf.voteCount)
+					rf.handleRequse(reply)
+					// fmt.Println("election voteCount: ", rf.voteCount)
+				}
+			} (serverNum, args)
+		}
+	}
+
+}
+
+func (rf *Raft) changeState(state int) {
+	rf.currentState = state
+}
+
+func (rf *Raft) getLastHeartBeat() time.Time {
+	return rf.lastHeartBeat
+}
+
+// 到达时间之后还未成为leader的话，直接变为follower
+func (rf *Raft) checkState() {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	time.Sleep(time.Duration((250 + rand.Intn(150))) * time.Millisecond)
+	if rf.currentState != leader {
+		rf.currentState = follower
+		rf.voteCount = 0
+		rf.votedFor = -1
+	}
+}
+
+func (rf *Raft) handleRequse(reply RequestVoteReply) {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	// fmt.Println("voteCount: ", rf.voteCount)
+	if rf.voteCount == 0 {
+		fmt.Println("rf.voteCount == 0")
+		return
+	}
+	if reply.Term > rf.currentTerm {
+		rf.currentTerm = reply.Term
+		rf.changeState(follower)
+		fmt.Println("rf.currentTerm < reply.Term")
+		rf.voteCount = 0
+		rf.votedFor = -1
+	} else if reply.IntvoteGranted {
+		rf.voteCount++
+		// fmt.Println("voteCount: ", rf.voteCount)
+		// 如果已经达到了多数，就直接变为leader, 并将票数归零
+		if rf.voteCount > (len(rf.peers) >> 1) && rf.currentState == candidate {
+			rf.changeState(leader)
+			rf.voteCount = 0
+			rf.votedFor = -1
+			args := AppendEntriesArgs{rf.currentTerm, rf.me, rf.commitIndex, rf.currentTerm, rf.log, 0}
+			// reply := AppendEntriesReply
+			rf.sendAppendEntries(args)
+		}
+	}
+}
+
+type AppendEntriesArgs struct {
+	// Your data here (2A).
+	// 如果term < currentTerm 返回 currentTerm，否则返回term
+	Term int			// leader的任期
+	LeaderId int		// leader的ID
+	PrevLogIndex int	// 追加日志的其实Index
+	PrevLogTerm int		// 追加日志的任期
+	Entries []LogEntry
+	LeaderCommit int
+}
+
+type AppendEntriesReply struct {
+	// Your data here (2A).
+	// 如果term < currentTerm 返回 currentTerm，否则返回term
+	Term int
+	Success bool
+}
+
+// TODO 给每个服务器发送log是要leader自己控制还是交给此函数来控制？
+func (rf *Raft) sendAppendEntries(args AppendEntriesArgs) bool {
+	for server := range rf.peers {
+		go func (server int) {
+			reply := AppendEntriesReply{}
+			rf.peers[server].Call("Raft.AppendEntries", &args, &reply)
+			// if ok {
+			// 	rf.AppendEntries(&args, &reply)
+			// }
+		} (server)
+	}
+	return true
+	// ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
+	// return ok
+}
+
+func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply) {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	rf.lastHeartBeat = time.Now()	// 更新leader心跳的时间
+	rf.leader = args.LeaderId		// 更新leader的ID
+	rf.votedFor = -1				
+	rf.voteCount = 0
+	rf.changeState(follower)
+	rf.currentTerm = args.Term
+}
+
+
 
 //
 // the service or tester wants to create a Raft server. the ports
@@ -271,12 +481,20 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.persister = persister
 	rf.me = me
 
+	rf.currentState = follower
+	rf.commitIndex = 0
+	rf.lastApplied = 0
+	rf.votedFor = -1
+	rf.lastHeartBeat = time.Now()
+
 	// Your initialization code here (2A, 2B, 2C).
 
 	// initialize from state persisted before a crash
 	rf.readPersist(persister.ReadRaftState())
 
 	// start ticker goroutine to start elections
+	// 初始化之后立马进行选举
+	rf.election()
 	go rf.ticker()
 
 

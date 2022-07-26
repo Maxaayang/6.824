@@ -1,0 +1,96 @@
+Test (2A): initial election ...
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+warning: term changed even though there were no failuresrf.voteCount == 0
+rf.voteCount == 0
+  ... Passed --   3.1  3   86   18684    0
+Test (2A): election after network failure ...
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.currentTerm < reply.Term
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+  ... Passed --   4.5  3  146   21976    0
+Test (2A): multiple elections ...
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.currentTerm < reply.Term
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.currentTerm < reply.Term
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.currentTerm < reply.Term
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.currentTerm < reply.Term
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+rf.voteCount == 0
+  ... Passed --   5.5  7  786  124779    0
+PASS
+ok  	6.824/raft	13.187s

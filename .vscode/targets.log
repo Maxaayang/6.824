@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 21 08:49:31 2022
+# Make data base, printed on Tue Jul 26 11:21:46 2022
 
 # Variables
 
@@ -59,7 +59,7 @@ VSCODE_CWD = /root
 # environment
 GOPROXY = https://goproxy.cn
 # environment
-SSH_CONNECTION = 10.250.249.107 49337 10.249.47.15 22
+SSH_CONNECTION = 10.250.249.107 65280 10.249.47.15 22
 # environment
 PATH = /root/.vscode-server/bin/ee8c7def80afc00dd6e593ef12f37756d8f504ea/bin:/root/.vscode-server/bin/ee8c7def80afc00dd6e593ef12f37756d8f504ea/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
@@ -71,7 +71,7 @@ VSCODE_LOG_STACK = false
 # environment
 LC_NUMERIC = zh_CN.UTF-8
 # environment
-VSCODE_IPC_HOOK_CLI = /run/user/0/vscode-ipc-5769e949-44ee-4f3f-8f65-c94b945c0697.sock
+VSCODE_IPC_HOOK_CLI = /run/user/0/vscode-ipc-dfdddc05-120c-4755-b240-a63a38a27b01.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -107,7 +107,7 @@ MAKECMDGOALS := all
 # environment
 SHLVL = 1
 # environment
-XDG_SESSION_ID = 609
+XDG_SESSION_ID = 105
 # environment
 USER = root
 # environment
@@ -133,7 +133,7 @@ MAKEFLAGS = pqrR
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_CLIENT = 10.250.249.107 49337 22
+SSH_CLIENT = 10.250.249.107 65280 22
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -385,6 +385,6 @@ check-all:
 # strcache performance: lookups = 31 / hit rate = 48%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=1/31=3%
-# Finished Make data base on Thu Jul 21 08:49:31 2022
+# Finished Make data base on Tue Jul 26 11:21:46 2022
 
  

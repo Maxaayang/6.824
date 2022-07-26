@@ -85,6 +85,7 @@ func (c *Coordinator) GetUndoneMapFile(req *Args, res *Reply) error {
 	}
 	c.mu.Unlock()
 
+	// TODO 这一部分需要重新设计一下
 	fmt.Println(time.Now())
 	time.Sleep(20 * time.Second)
 	fmt.Println(time.Now())
@@ -135,7 +136,6 @@ func (c *Coordinator) MapDone(res *Reply, req *Args) error {
 	return nil
 }
 
-// TODO 这里还得进行处理，没有检查未完成的
 func (c *Coordinator) GetUndoneReduceFile(req *Args, res *Reply) error {
 	if c.curPhase != ReducePhase {
 		return nil
