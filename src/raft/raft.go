@@ -20,7 +20,7 @@ package raft
 import (
 	//	"bytes"
 	"fmt"
-	// "log"
+	"log"
 	"math/rand"
 	"sync"
 	"sync/atomic"
@@ -102,6 +102,8 @@ type Raft struct {
 	matchIndex []int // 每个服务器已复制给它的日志的最高索引值
 
 	leader int // 当前leader的位置
+
+	applyCh chan ApplyMsg
 
 	// Your data here (2A, 2B, 2C).
 	// Look at the paper's Figure 2 for a description of what
@@ -297,21 +299,29 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	// Your code here (2B).
 	if rf.leader == rf.me {
 		rf.lastHeartBeat = time.Now()
-		index := 0
-		if len(rf.log) == 0 {
-			index = 0
-		} else {
-			index = rf.log[len(rf.log)-1].Index + 1
-		}
+		index := rf.lastApplied + 1
+		//if len(rf.log) == 0 {
+		//	index = 0
+		//} else {
+		//	index = rf.log[len(rf.log)-1].Index + 1
+		//}
 
-		log := LogEntry{Command: command, Term: rf.currentTerm, Index: index}
+		appendLog := LogEntry{Command: command, Term: rf.currentTerm, Index: index}
+		log.Printf("log is %v", appendLog)
 
-		args := AppendEntriesArgs{false, rf.currentTerm, rf.me, rf.lastApplied, rf.lastLogTerm, log}
+		args := AppendEntriesArgs{false, rf.currentTerm, rf.me, rf.lastApplied, rf.lastLogTerm, appendLog}
+		// fmt.Println("entries args is", args)
 
-		rf.sendAppendEntries(args)
+		// rf.sendAppendEntries(args)
 		// TODO
-		// rf.log := append(rf.log, log)
-		// rf.lastApplied =
+		rf.log = append(rf.log, appendLog)
+		rf.lastApplied = index
+		rf.lastLogTerm = rf.currentTerm
+		rf.sendAppendEntries(args)
+		log.Printf("leader %d logs are %v", rf.me, rf.log)
+		// log.Printf("leader %d send prevLogIndex is %d , the prevLogTerm is %d", rf.me, rf.lastApplied, rf.lastLogTerm)
+
+		return index, rf.currentTerm, rf.leader == rf.me
 
 	}
 
@@ -351,7 +361,7 @@ func (rf *Raft) ticker() {
 		// 先sleep一段时间，然后判断上一次收到心跳的时间是否超时
 		// TODO 这里的过期时间是要随机的
 		lastHeartBeat := rf.getLastHeartBeat()
-		i := 250 + rand.Intn(150)
+		i := 350 + rand.Intn(150)
 		// fmt.Println("sleep: ", i)
 		time.Sleep(time.Duration(i) * time.Millisecond)
 		if lastHeartBeat != rf.getLastHeartBeat() {
@@ -401,7 +411,7 @@ func (rf *Raft) getLastHeartBeat() time.Time {
 
 // 到达时间之后还未成为leader的话，直接变为follower
 func (rf *Raft) checkState() {
-	time.Sleep(time.Duration(400+rand.Intn(50)) * time.Millisecond)
+	time.Sleep(time.Duration(450+rand.Intn(50)) * time.Millisecond)
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 	if rf.currentState != leader {
@@ -416,7 +426,7 @@ func (rf *Raft) sendHeartBeat() {
 	for {
 		time.Sleep(heartTime * time.Microsecond)
 		if !rf.killed() && rf.currentState == leader {
-			if time.Since(rf.getLastHeartBeat()) > time.Duration(heartTime) * time.Microsecond {
+			if time.Since(rf.getLastHeartBeat()) > time.Duration(heartTime)*time.Microsecond {
 				rf.sendAppendEntries(args)
 			}
 		} else {
@@ -451,7 +461,7 @@ func (rf *Raft) handleRequse(reply RequestVoteReply) {
 			args := AppendEntriesArgs{true, rf.currentTerm, rf.me, rf.commitIndex, rf.currentTerm, LogEntry{}}
 			// reply := AppendEntriesReply
 			rf.sendAppendEntries(args)
-			// log.Printf("server %d 在term %d 当选为leader", rf.me, rf.currentTerm)
+			log.Printf("server %d 在term %d 当选为leader", rf.me, rf.currentTerm)
 			// 开始定期给follower发送心跳
 			go rf.sendHeartBeat()
 		}
@@ -479,14 +489,46 @@ type AppendEntriesReply struct {
 
 type LogCommitArgs struct {
 	Commit bool
+	Index int
 }
 
 type LogCommitReply struct {
 	Commit bool
 }
 
-func (rf *Raft) checkCommit() {
+func (rf *Raft) checkCommit(commits *int) {
+	for {
+		if *commits >= len(rf.peers) >> 1 {
+			args := LogCommitArgs{Commit: true, Index: rf.lastApplied}
+			for server := range rf.peers {
+				go func(server int, args *LogCommitArgs) {
+					rf.peers[server].Call("Raft.CommitLog", args, &LogCommitReply{})
+					// log.Printf("call server %d to commit", server)
+				}(server, &args)
+			}
+			break
+		}
+	}
+}
 
+func (rf *Raft) CommitLog(args *LogCommitArgs, reply *LogCommitReply) {
+	log.Printf("server %d receive commit", rf.me)
+	if args.Commit {
+		for {
+			// rf.mu.Lock()
+			// defer rf.mu.Unlock()
+			if rf.commitIndex < args.Index && len(rf.log) > args.Index {
+				log.Printf("server %d log length is %d, commit index is %d, args index is %d", rf.me, len(rf.log), rf.commitIndex, args.Index)
+				// TODO out of range
+				msg := ApplyMsg{CommandValid: true, Command: rf.log[rf.commitIndex + 1].Command, CommandIndex: rf.log[rf.commitIndex + 1].Index}
+				rf.applyCh <- msg
+				// log.Printf("%d 在 term %d 往上层状态机成功发送 Msg %+v", rf.me, rf.currentTerm, msg)
+				rf.commitIndex++
+			} else {
+				break
+			}
+		}
+	}
 }
 
 // TODO 给每个服务器发送log是要leader自己控制还是交给此函数来控制？
@@ -507,26 +549,50 @@ func (rf *Raft) sendAppendEntries(args AppendEntriesArgs) bool {
 		return true
 	}
 
+	commits := 0
+	// log.Printf("commits: %d", commits)
 	for server := range rf.peers {
-		go func(server int, args AppendEntriesArgs) {
-			rf.matchIndex[server] = args.PrevLogIndex
-			rf.nextIndex[server] = args.Entries.Index
-			length := len(rf.log)
-			reply := AppendEntriesReply{}
-			rf.peers[server].Call("Raft.AppendEntries", args, reply)
-			if reply.Success {
-
-			} else if length > 2 && reply.Term != 0 {
-				rf.matchIndex[server]--
-				rf.nextIndex[server]--
-				args.Entries = rf.log[length-1]
-				args.PrevLogIndex = rf.log[length-2].Index
-				args.PrevLogTerm = rf.log[length-2].Term
-			}
-		}(server, args)
+		if server != rf.me {
+			// log.Printf("server is: %d", server)
+			go func(server int, args AppendEntriesArgs, commits *int) {
+				// log.Printf("server is: %d", server)
+				rf.matchIndex[server] = args.PrevLogIndex
+				// log.Printf("PrevLogIndex: %d", args.PrevLogIndex)
+				rf.nextIndex[server] = args.Entries.Index
+				length := len(rf.log)
+				logLength := len(rf.log)
+				reply := AppendEntriesReply{}
+				for {
+					// log.Printf("send server %d args: %v", server, args)
+					rf.peers[server].Call("Raft.AppendEntries", &args, &reply)
+					// log.Printf("call %d appendentries", server)
+					// 这里得区分是不是复制的同一个日志
+					if reply.Success && length == logLength{
+						rf.matchIndex[server] = rf.lastApplied
+						rf.nextIndex[server] = rf.lastApplied + 1
+						*commits++
+						break
+					} else if reply.Success {
+						length++
+						rf.matchIndex[server]++
+						rf.nextIndex[server]++
+						args.Entries = rf.log[length - 1]
+						args.PrevLogIndex = rf.log[length - 2].Index
+						args.PrevLogTerm = rf.log[length - 2].Term
+						// length++
+					} else if length > 2 && reply.Term != 0 {
+						rf.matchIndex[server]--
+						rf.nextIndex[server]--
+						args.Entries = rf.log[length-2]
+						args.PrevLogIndex = rf.log[length-3].Index
+						args.PrevLogTerm = rf.log[length-3].Term
+						length--
+					}
+				}
+			}(server, args, &commits)
+		}
 	}
-	// ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
-	// return ok
+	go rf.checkCommit(&commits)
 	return true
 }
 
@@ -551,6 +617,7 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 			return
 		}
 	}
+	// log.Printf("server %d receive args %v from leader %d", rf.me, args, args.LeaderId)
 	if args.Term < rf.currentTerm {
 		reply.Term = rf.currentTerm
 		reply.Success = false
@@ -559,11 +626,19 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		reply.Term = rf.currentTerm
 		reply.Success = false
 	} else {
-		rf.lastApplied = args.Entries.Index
-		rf.lastLogTerm = args.Term
-		rf.log = append(rf.log, args.Entries)
+		// rf.lastApplied = args.Entries.Index
+		// TODO 这里如果leader的log短了的话需要进行覆盖
+		if args.PrevLogIndex < rf.lastApplied {
+			rf.log[args.Entries.Index].Command = args.Entries.Command
+			rf.log[args.Entries.Index].Term = args.Entries.Term
+		} else {
+			rf.lastApplied++
+			rf.lastLogTerm = args.Term
+			rf.log = append(rf.log, args.Entries)
+		}
 		reply.Term = rf.currentTerm
 		reply.Success = true
+		log.Printf("server %d logs are %v", rf.me, rf.log)
 		return
 	}
 
@@ -592,6 +667,10 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.lastApplied = 0
 	rf.votedFor = -1
 	rf.lastLogTerm = 0
+	rf.applyCh = applyCh
+	rf.matchIndex = make([]int, len(peers))
+	rf.nextIndex = make([]int, len(peers))
+	rf.log = make([]LogEntry, 1)
 	rf.lastHeartBeat = time.Now()
 
 	// Your initialization code here (2A, 2B, 2C).
@@ -604,6 +683,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.election()
 	go rf.ticker()
 	fmt.Print()
+	log.Print()
 
 	return rf
 }

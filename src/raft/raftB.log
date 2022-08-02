@@ -1,0 +1,2297 @@
+
+loop 1
+2022/08/02 16:49:49 
+2022/08/02 16:49:49 
+2022/08/02 16:49:49 
+2022/08/02 16:49:49 
+2022/08/02 16:49:49 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:49:49 loop is 0
+2022/08/02 16:49:49 log is {10 1 1}
+2022/08/02 16:49:49 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:49:49 当前index是: 1
+2022/08/02 16:49:49 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:49:49 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:49:49 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:49:49 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:49:49 server 0 receive commit
+2022/08/02 16:49:49 server 3 receive commit
+2022/08/02 16:49:49 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:49:49 server 2 receive commit
+2022/08/02 16:49:49 server 1 receive commit
+2022/08/02 16:49:49 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:49:49 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:49:49 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:49:49 server 4 receive commit
+2022/08/02 16:49:49 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:49:49 commit index is 1
+2022/08/02 16:49:50 server 4 在term 2 当选为leader
+2022/08/02 16:49:50 disconnect server: 0 1 2
+2022/08/02 16:49:50 log is {20 2 2}
+2022/08/02 16:49:50 leader 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:49:50 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:49:51 server 4 在term 4 当选为leader
+2022/08/02 16:49:52 connect server: 0 1 2
+2022/08/02 16:49:52 server 3 在term 7 当选为leader
+2022/08/02 16:49:52 log is {30 7 3}
+2022/08/02 16:49:52 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:49:52 loop is 0
+2022/08/02 16:49:52 log is {1000 7 4}
+2022/08/02 16:49:52 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:49:52 当前index是: 4
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:49:52 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:49:52 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:49:52 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:49:52 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:49:52 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:49:52 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:49:52 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:49:52 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:49:52 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:49:52 server 4 receive commit
+2022/08/02 16:49:52 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:49:52 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:49:52 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:49:52 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:49:52 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:49:52 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:49:52 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:49:52 server 4 receive commit
+2022/08/02 16:49:52 server 4 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:49:52 server 4 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:49:52 server 4 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:49:52 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:49:52 server 0 receive commit
+2022/08/02 16:49:52 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:49:52 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:49:52 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:49:52 server 0 receive commit
+2022/08/02 16:49:52 server 3 receive commit
+2022/08/02 16:49:52 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:49:52 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:49:52 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:49:52 server 1 receive commit
+2022/08/02 16:49:52 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:49:52 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:49:52 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:49:52 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:49:52 server 2 receive commit
+2022/08/02 16:49:52 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:49:52 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:49:52 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:49:52 server 2 receive commit
+2022/08/02 16:49:52 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:49:52 server 3 receive commit
+2022/08/02 16:49:52 server 1 receive commit
+2022/08/02 16:49:52 commit index is 4
+  ... Passed --   3.0  5 6592 1390385    4
+PASS
+ok  	6.824/raft	2.978s
+
+loop 2
+2022/08/02 16:49:52 
+2022/08/02 16:49:52 
+2022/08/02 16:49:52 
+2022/08/02 16:49:52 
+2022/08/02 16:49:52 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:49:52 loop is 0
+2022/08/02 16:49:52 log is {10 1 1}
+2022/08/02 16:49:52 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:49:52 当前index是: 1
+2022/08/02 16:49:52 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:49:52 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:49:52 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:49:52 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:49:52 server 4 receive commit
+2022/08/02 16:49:52 server 1 receive commit
+2022/08/02 16:49:52 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:49:52 server 0 receive commit
+2022/08/02 16:49:52 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:49:52 server 3 receive commit
+2022/08/02 16:49:52 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:49:52 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:49:52 server 2 receive commit
+2022/08/02 16:49:52 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:49:52 commit index is 1
+2022/08/02 16:49:53 server 3 在term 2 当选为leader
+2022/08/02 16:49:53 disconnect server: 4 0 1
+2022/08/02 16:49:53 log is {20 2 2}
+2022/08/02 16:49:53 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:49:53 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:49:54 server 3 在term 5 当选为leader
+2022/08/02 16:49:55 connect server: 4 0 1
+2022/08/02 16:49:55 server 1 在term 6 当选为leader
+2022/08/02 16:49:55 server 1 在term 7 当选为leader
+2022/08/02 16:49:55 log is {30 7 2}
+2022/08/02 16:49:55 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:49:55 loop is 0
+2022/08/02 16:49:55 log is {1000 7 3}
+2022/08/02 16:49:55 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:49:55 当前index是: 3
+2022/08/02 16:49:55 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:49:55 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:49:55 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:49:55 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:49:55 server 4 receive commit
+2022/08/02 16:49:55 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:49:55 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:49:55 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:49:55 server 3 receive commit
+2022/08/02 16:49:55 server 0 receive commit
+2022/08/02 16:49:55 server 0 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:49:55 server 0 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:49:55 server 4 receive commit
+2022/08/02 16:49:55 server 1 receive commit
+2022/08/02 16:49:55 server 1 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:49:55 server 1 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:49:55 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:49:55 server 2 receive commit
+2022/08/02 16:49:55 server 0 receive commit
+2022/08/02 16:49:55 server 1 receive commit
+2022/08/02 16:49:55 server 2 receive commit
+2022/08/02 16:49:55 server 3 receive commit
+2022/08/02 16:49:56 server 1 在term 8 当选为leader
+2022/08/02 16:49:57 server 1 在term 9 当选为leader
+2022/08/02 16:49:57 server 1 在term 10 当选为leader
+2022/08/02 16:49:57 server 1 在term 11 当选为leader
+2022/08/02 16:49:57 loop is 1
+2022/08/02 16:49:57 log is {1000 11 4}
+2022/08/02 16:49:57 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4}]
+2022/08/02 16:49:57 当前index是: 4
+2022/08/02 16:49:57 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:49:57 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4}]
+2022/08/02 16:49:57 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:49:57 server 4 receive commit
+2022/08/02 16:49:57 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4}]
+2022/08/02 16:49:57 server 0 receive commit
+2022/08/02 16:49:57 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:49:57 server 1 receive commit
+2022/08/02 16:49:57 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:49:57 server 2 receive commit
+2022/08/02 16:49:57 server 3 receive commit
+2022/08/02 16:49:58 server 1 在term 12 当选为leader
+2022/08/02 16:49:59 server 1 在term 13 当选为leader
+2022/08/02 16:49:59 server 1 在term 14 当选为leader
+2022/08/02 16:49:59 loop is 2
+2022/08/02 16:49:59 log is {1000 14 5}
+2022/08/02 16:49:59 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5}]
+2022/08/02 16:49:59 当前index是: 5
+2022/08/02 16:49:59 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5}]
+2022/08/02 16:49:59 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5}]
+2022/08/02 16:49:59 server 4 receive commit
+2022/08/02 16:49:59 server 4 log length is 6, commit index is 1, args index is 5
+2022/08/02 16:49:59 server 4 log length is 6, commit index is 2, args index is 5
+2022/08/02 16:49:59 server 4 log length is 6, commit index is 3, args index is 5
+2022/08/02 16:49:59 server 4 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:49:59 server 0 receive commit
+2022/08/02 16:49:59 server 0 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:49:59 server 1 receive commit
+2022/08/02 16:49:59 server 1 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:49:59 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:49:59 server 2 receive commit
+2022/08/02 16:49:59 server 3 receive commit
+2022/08/02 16:49:59 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:00 server 1 在term 15 当选为leader
+2022/08/02 16:50:01 server 1 在term 16 当选为leader
+2022/08/02 16:50:01 server 1 在term 17 当选为leader
+2022/08/02 16:50:01 loop is 3
+2022/08/02 16:50:01 log is {1000 17 6}
+2022/08/02 16:50:01 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 17 6}]
+2022/08/02 16:50:01 当前index是: 6
+2022/08/02 16:50:01 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 17 6}]
+2022/08/02 16:50:01 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:01 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 17 6}]
+2022/08/02 16:50:01 server 4 receive commit
+2022/08/02 16:50:01 server 4 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:01 server 0 receive commit
+2022/08/02 16:50:01 server 0 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:01 server 1 receive commit
+2022/08/02 16:50:01 server 1 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:01 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:01 server 2 receive commit
+2022/08/02 16:50:01 server 3 receive commit
+2022/08/02 16:50:02 server 1 在term 18 当选为leader
+2022/08/02 16:50:02 server 1 在term 19 当选为leader
+2022/08/02 16:50:03 server 1 在term 20 当选为leader
+2022/08/02 16:50:03 server 1 在term 21 当选为leader
+2022/08/02 16:50:03 loop is 4
+2022/08/02 16:50:03 log is {1000 21 7}
+2022/08/02 16:50:03 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 17 6} {1000 21 7}]
+2022/08/02 16:50:03 当前index是: 7
+2022/08/02 16:50:03 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 17 6} {1000 21 7}]
+2022/08/02 16:50:03 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:03 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 17 6} {1000 21 7}]
+2022/08/02 16:50:03 server 4 receive commit
+2022/08/02 16:50:03 server 4 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:03 server 0 receive commit
+2022/08/02 16:50:03 server 0 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:03 server 1 receive commit
+2022/08/02 16:50:03 server 1 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:03 server 2 receive commit
+2022/08/02 16:50:03 server 3 receive commit
+2022/08/02 16:50:03 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:04 server 1 在term 22 当选为leader
+2022/08/02 16:50:05 server 1 在term 23 当选为leader
+2022/08/02 16:50:05 server 1 在term 24 当选为leader
+2022/08/02 16:50:05 server 1 在term 25 当选为leader
+--- FAIL: TestFailNoAgree2B (13.13s)
+    config.go:616: one(1000) failed to reach agreement
+FAIL
+exit status 1
+FAIL	6.824/raft	13.132s
+
+loop 3
+2022/08/02 16:50:06 
+2022/08/02 16:50:06 
+2022/08/02 16:50:06 
+2022/08/02 16:50:06 
+2022/08/02 16:50:06 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:50:06 loop is 0
+2022/08/02 16:50:06 log is {10 1 1}
+2022/08/02 16:50:06 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:06 当前index是: 1
+2022/08/02 16:50:06 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:06 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:06 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:06 server 4 receive commit
+2022/08/02 16:50:06 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:06 server 2 receive commit
+2022/08/02 16:50:06 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:06 server 0 receive commit
+2022/08/02 16:50:06 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:06 server 3 receive commit
+2022/08/02 16:50:06 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:06 server 1 receive commit
+2022/08/02 16:50:06 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:06 server 4 在term 2 当选为leader
+2022/08/02 16:50:06 server 4 在term 3 当选为leader
+2022/08/02 16:50:07 server 4 在term 4 当选为leader
+2022/08/02 16:50:07 server 4 在term 5 当选为leader
+--- FAIL: TestFailNoAgree2B (2.02s)
+    config.go:609: one(10) failed to reach agreement
+FAIL
+exit status 1
+FAIL	6.824/raft	2.023s
+
+loop 4
+2022/08/02 16:50:08 
+2022/08/02 16:50:08 
+2022/08/02 16:50:08 
+2022/08/02 16:50:08 
+2022/08/02 16:50:08 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:50:08 loop is 0
+2022/08/02 16:50:08 log is {10 1 1}
+2022/08/02 16:50:08 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:08 当前index是: 1
+2022/08/02 16:50:08 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:08 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:08 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:08 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:08 server 1 receive commit
+2022/08/02 16:50:08 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:08 server 4 receive commit
+2022/08/02 16:50:08 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:08 server 0 receive commit
+2022/08/02 16:50:08 server 2 receive commit
+2022/08/02 16:50:08 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:08 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:08 server 3 receive commit
+2022/08/02 16:50:08 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:08 commit index is 1
+2022/08/02 16:50:08 server 3 在term 2 当选为leader
+2022/08/02 16:50:08 disconnect server: 4 0 1
+2022/08/02 16:50:08 log is {20 2 2}
+2022/08/02 16:50:08 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:08 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:09 server 3 在term 4 当选为leader
+2022/08/02 16:50:10 connect server: 4 0 1
+2022/08/02 16:50:10 server 4 在term 6 当选为leader
+2022/08/02 16:50:11 log is {30 6 2}
+2022/08/02 16:50:11 leader 4 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:11 loop is 0
+2022/08/02 16:50:11 log is {1000 6 3}
+2022/08/02 16:50:11 leader 4 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3}]
+2022/08/02 16:50:11 当前index是: 3
+2022/08/02 16:50:11 server 1 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:11 server 2 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:11 server 3 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:11 server 4 receive commit
+2022/08/02 16:50:11 server 4 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:50:11 server 4 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:50:11 server 0 receive commit
+2022/08/02 16:50:11 server 1 receive commit
+2022/08/02 16:50:11 server 2 receive commit
+2022/08/02 16:50:11 server 3 receive commit
+2022/08/02 16:50:11 server 0 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:11 server 1 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3}]
+2022/08/02 16:50:11 server 0 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3}]
+2022/08/02 16:50:11 server 4 receive commit
+2022/08/02 16:50:11 server 0 receive commit
+2022/08/02 16:50:11 server 0 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:50:11 server 0 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:50:11 server 2 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:50:11 server 1 receive commit
+2022/08/02 16:50:11 server 1 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:50:11 server 1 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:50:11 server 2 receive commit
+2022/08/02 16:50:11 server 3 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:11 server 3 receive commit
+2022/08/02 16:50:11 server 4 在term 7 当选为leader
+2022/08/02 16:50:12 server 4 在term 8 当选为leader
+2022/08/02 16:50:12 server 4 在term 9 当选为leader
+2022/08/02 16:50:12 server 4 在term 10 当选为leader
+2022/08/02 16:50:13 loop is 1
+2022/08/02 16:50:13 log is {1000 10 4}
+2022/08/02 16:50:13 leader 4 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4}]
+2022/08/02 16:50:13 当前index是: 4
+2022/08/02 16:50:13 server 0 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4}]
+2022/08/02 16:50:13 server 1 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4}]
+2022/08/02 16:50:13 server 4 receive commit
+2022/08/02 16:50:13 server 4 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:13 server 0 receive commit
+2022/08/02 16:50:13 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:13 server 1 receive commit
+2022/08/02 16:50:13 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:13 server 2 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:13 server 3 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:13 server 3 receive commit
+2022/08/02 16:50:13 server 2 receive commit
+2022/08/02 16:50:13 server 4 在term 11 当选为leader
+2022/08/02 16:50:14 server 4 在term 12 当选为leader
+2022/08/02 16:50:14 server 4 在term 13 当选为leader
+2022/08/02 16:50:15 server 4 在term 14 当选为leader
+2022/08/02 16:50:15 loop is 2
+2022/08/02 16:50:15 log is {1000 14 5}
+2022/08/02 16:50:15 leader 4 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4} {1000 14 5}]
+2022/08/02 16:50:15 当前index是: 5
+2022/08/02 16:50:15 server 1 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4} {1000 14 5}]
+2022/08/02 16:50:15 server 0 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4} {1000 14 5}]
+2022/08/02 16:50:15 server 4 receive commit
+2022/08/02 16:50:15 server 4 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:15 server 0 receive commit
+2022/08/02 16:50:15 server 0 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:15 server 1 receive commit
+2022/08/02 16:50:15 server 1 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:15 server 2 receive commit
+2022/08/02 16:50:15 server 3 receive commit
+2022/08/02 16:50:15 server 2 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:15 server 3 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:16 server 4 在term 15 当选为leader
+2022/08/02 16:50:16 server 4 在term 16 当选为leader
+2022/08/02 16:50:16 server 4 在term 17 当选为leader
+2022/08/02 16:50:17 server 4 在term 18 当选为leader
+2022/08/02 16:50:17 loop is 3
+2022/08/02 16:50:17 log is {1000 18 6}
+2022/08/02 16:50:17 leader 4 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4} {1000 14 5} {1000 18 6}]
+2022/08/02 16:50:17 当前index是: 6
+2022/08/02 16:50:17 server 0 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4} {1000 14 5} {1000 18 6}]
+2022/08/02 16:50:17 server 1 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4} {1000 14 5} {1000 18 6}]
+2022/08/02 16:50:17 server 2 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:17 server 3 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:17 server 0 receive commit
+2022/08/02 16:50:17 server 0 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:17 server 1 receive commit
+2022/08/02 16:50:17 server 1 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:17 server 3 receive commit
+2022/08/02 16:50:17 server 4 receive commit
+2022/08/02 16:50:17 server 4 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:17 server 2 receive commit
+2022/08/02 16:50:17 server 4 在term 19 当选为leader
+2022/08/02 16:50:18 server 4 在term 20 当选为leader
+2022/08/02 16:50:18 server 4 在term 21 当选为leader
+2022/08/02 16:50:19 loop is 4
+2022/08/02 16:50:19 log is {1000 21 7}
+2022/08/02 16:50:19 leader 4 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4} {1000 14 5} {1000 18 6} {1000 21 7}]
+2022/08/02 16:50:19 当前index是: 7
+2022/08/02 16:50:19 server 0 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4} {1000 14 5} {1000 18 6} {1000 21 7}]
+2022/08/02 16:50:19 server 1 logs are [{<nil> 0 0} {10 1 1} {30 6 2} {1000 6 3} {1000 10 4} {1000 14 5} {1000 18 6} {1000 21 7}]
+2022/08/02 16:50:19 server 2 receive commit
+2022/08/02 16:50:19 server 1 receive commit
+2022/08/02 16:50:19 server 1 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:19 server 0 receive commit
+2022/08/02 16:50:19 server 0 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:19 server 4 receive commit
+2022/08/02 16:50:19 server 4 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:19 server 3 receive commit
+2022/08/02 16:50:19 server 3 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:19 server 2 logs are [{<nil> 0 0} {10 1 1} {30 6 2}]
+2022/08/02 16:50:19 server 4 在term 22 当选为leader
+2022/08/02 16:50:20 server 4 在term 23 当选为leader
+2022/08/02 16:50:20 server 4 在term 24 当选为leader
+2022/08/02 16:50:20 server 4 在term 25 当选为leader
+2022/08/02 16:50:21 server 4 在term 26 当选为leader
+--- FAIL: TestFailNoAgree2B (13.01s)
+    config.go:616: one(1000) failed to reach agreement
+FAIL
+exit status 1
+FAIL	6.824/raft	13.012s
+
+loop 5
+2022/08/02 16:50:21 
+2022/08/02 16:50:21 
+2022/08/02 16:50:21 
+2022/08/02 16:50:21 
+2022/08/02 16:50:21 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:50:21 loop is 0
+2022/08/02 16:50:21 log is {10 1 1}
+2022/08/02 16:50:21 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:21 当前index是: 1
+2022/08/02 16:50:21 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:21 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:21 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:21 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:21 server 2 receive commit
+2022/08/02 16:50:21 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:21 server 3 receive commit
+2022/08/02 16:50:21 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:21 server 1 receive commit
+2022/08/02 16:50:21 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:21 server 4 receive commit
+2022/08/02 16:50:21 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:21 server 0 receive commit
+2022/08/02 16:50:21 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:21 commit index is 1
+2022/08/02 16:50:21 server 3 在term 2 当选为leader
+2022/08/02 16:50:21 disconnect server: 4 0 1
+2022/08/02 16:50:21 log is {20 2 2}
+2022/08/02 16:50:21 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:21 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:23 server 2 在term 6 当选为leader
+2022/08/02 16:50:23 connect server: 4 0 1
+2022/08/02 16:50:23 server 2 在term 7 当选为leader
+2022/08/02 16:50:24 server 2 在term 8 当选为leader
+2022/08/02 16:50:24 log is {30 8 3}
+2022/08/02 16:50:24 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:50:24 loop is 0
+2022/08/02 16:50:24 log is {1000 8 4}
+2022/08/02 16:50:24 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:50:24 当前index是: 4
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:50:24 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:24 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:50:24 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:50:24 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:24 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:50:24 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:50:24 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:50:24 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:50:24 server 4 receive commit
+2022/08/02 16:50:24 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:50:24 server 2 receive commit
+2022/08/02 16:50:24 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:50:24 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:50:24 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:50:24 server 3 receive commit
+2022/08/02 16:50:24 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:50:24 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:50:24 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:24 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:50:24 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:24 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:24 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:50:24 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:50:24 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:50:24 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:50:24 server 0 receive commit
+2022/08/02 16:50:24 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:50:24 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:50:24 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:24 server 0 receive commit
+2022/08/02 16:50:24 server 1 receive commit
+2022/08/02 16:50:24 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:50:24 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:50:24 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:24 server 1 receive commit
+2022/08/02 16:50:24 server 4 receive commit
+2022/08/02 16:50:24 server 4 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:50:24 server 4 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:50:24 server 4 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:24 server 3 receive commit
+2022/08/02 16:50:24 server 2 receive commit
+2022/08/02 16:50:24 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:24 server 2 log length is 5, commit index is 3, args index is 4
+panic: runtime error: index out of range [5] with length 5
+
+goroutine 22894 [running]:
+6.824/raft.(*Raft).CommitLog(0xc000136380, 0xc001e780b0, 0x0?)
+	/home/addr/project/6.824/src/raft/raft.go:523 +0x25e
+reflect.Value.call({0xc00006a2a0?, 0xc00000e6b8?, 0xc0017a9b10?}, {0x616399, 0x4}, {0xc0017a9c68, 0x3, 0xc0017a9b40?})
+	/opt/go/src/reflect/value.go:556 +0x845
+reflect.Value.Call({0xc00006a2a0?, 0xc00000e6b8?, 0xc000304e00?}, {0xc0017a9c68, 0x3, 0x3})
+	/opt/go/src/reflect/value.go:339 +0xbf
+6.824/labrpc.(*Service).dispatch(0xc000156200, {0x61896e, 0x9}, {{0x5d7d40, 0xc00005fa40}, {0x618969, 0xe}, {0x661fc0, 0x5cf1a0}, {0xc001118500, ...}, ...})
+	/home/addr/project/6.824/src/labrpc/labrpc.go:496 +0x38e
+6.824/labrpc.(*Server).dispatch(0xc00000c798, {{0x5d7d40, 0xc00005fa40}, {0x618969, 0xe}, {0x661fc0, 0x5cf1a0}, {0xc001118500, 0x39, 0x40}, ...})
+	/home/addr/project/6.824/src/labrpc/labrpc.go:420 +0x1fe
+6.824/labrpc.(*Network).processReq.func1()
+	/home/addr/project/6.824/src/labrpc/labrpc.go:240 +0x58
+created by 6.824/labrpc.(*Network).processReq
+	/home/addr/project/6.824/src/labrpc/labrpc.go:239 +0x1d7
+exit status 2
+FAIL	6.824/raft	3.032s
+
+loop 6
+2022/08/02 16:50:24 
+2022/08/02 16:50:24 
+2022/08/02 16:50:24 
+2022/08/02 16:50:24 
+2022/08/02 16:50:24 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:50:24 loop is 0
+2022/08/02 16:50:24 log is {10 1 1}
+2022/08/02 16:50:24 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:24 当前index是: 1
+2022/08/02 16:50:24 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:24 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:24 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:24 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:24 server 3 receive commit
+2022/08/02 16:50:24 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:24 server 2 receive commit
+2022/08/02 16:50:24 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:24 server 4 receive commit
+2022/08/02 16:50:24 server 0 receive commit
+2022/08/02 16:50:24 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:24 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:24 server 1 receive commit
+2022/08/02 16:50:24 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:24 commit index is 1
+2022/08/02 16:50:24 server 1 在term 2 当选为leader
+2022/08/02 16:50:25 disconnect server: 2 3 4
+2022/08/02 16:50:25 log is {20 2 2}
+2022/08/02 16:50:25 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:25 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:26 server 0 在term 6 当选为leader
+2022/08/02 16:50:27 connect server: 2 3 4
+2022/08/02 16:50:27 server 2 在term 7 当选为leader
+2022/08/02 16:50:27 log is {30 7 2}
+2022/08/02 16:50:27 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:27 loop is 0
+2022/08/02 16:50:27 log is {1000 7 3}
+2022/08/02 16:50:27 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:50:27 当前index是: 3
+2022/08/02 16:50:27 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:27 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:27 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:27 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:27 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:50:27 server 4 receive commit
+2022/08/02 16:50:27 server 0 receive commit
+2022/08/02 16:50:27 server 1 receive commit
+2022/08/02 16:50:27 server 2 receive commit
+2022/08/02 16:50:27 server 2 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:50:27 server 2 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:50:27 server 3 receive commit
+2022/08/02 16:50:27 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:27 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:50:27 server 2 receive commit
+2022/08/02 16:50:27 server 0 receive commit
+2022/08/02 16:50:27 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:50:27 server 1 receive commit
+2022/08/02 16:50:27 server 4 receive commit
+2022/08/02 16:50:27 server 4 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:50:27 server 4 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:50:27 server 3 receive commit
+2022/08/02 16:50:27 server 3 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:50:27 server 3 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:50:27 server 2 在term 8 当选为leader
+2022/08/02 16:50:28 server 2 在term 9 当选为leader
+2022/08/02 16:50:28 server 2 在term 10 当选为leader
+2022/08/02 16:50:29 server 2 在term 11 当选为leader
+2022/08/02 16:50:29 server 2 在term 12 当选为leader
+2022/08/02 16:50:29 loop is 1
+2022/08/02 16:50:29 log is {1000 12 4}
+2022/08/02 16:50:29 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4}]
+2022/08/02 16:50:29 当前index是: 4
+2022/08/02 16:50:29 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:29 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:29 server 4 receive commit
+2022/08/02 16:50:29 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4}]
+2022/08/02 16:50:29 server 1 receive commit
+2022/08/02 16:50:29 server 2 receive commit
+2022/08/02 16:50:29 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:29 server 3 receive commit
+2022/08/02 16:50:29 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:29 server 0 receive commit
+2022/08/02 16:50:29 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4}]
+2022/08/02 16:50:30 server 2 在term 13 当选为leader
+2022/08/02 16:50:30 server 2 在term 14 当选为leader
+2022/08/02 16:50:31 server 2 在term 15 当选为leader
+2022/08/02 16:50:31 loop is 2
+2022/08/02 16:50:31 log is {1000 15 5}
+2022/08/02 16:50:31 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4} {1000 15 5}]
+2022/08/02 16:50:31 当前index是: 5
+2022/08/02 16:50:31 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:31 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4} {1000 15 5}]
+2022/08/02 16:50:31 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4} {1000 15 5}]
+2022/08/02 16:50:31 server 4 receive commit
+2022/08/02 16:50:31 server 4 log length is 6, commit index is 3, args index is 5
+2022/08/02 16:50:31 server 4 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:31 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:31 server 0 receive commit
+2022/08/02 16:50:31 server 1 receive commit
+2022/08/02 16:50:31 server 2 receive commit
+2022/08/02 16:50:31 server 2 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:31 server 3 receive commit
+2022/08/02 16:50:31 server 3 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:32 server 2 在term 16 当选为leader
+2022/08/02 16:50:32 server 2 在term 17 当选为leader
+2022/08/02 16:50:32 server 2 在term 18 当选为leader
+2022/08/02 16:50:33 server 2 在term 19 当选为leader
+2022/08/02 16:50:33 loop is 3
+2022/08/02 16:50:33 log is {1000 19 6}
+2022/08/02 16:50:33 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4} {1000 15 5} {1000 19 6}]
+2022/08/02 16:50:33 当前index是: 6
+2022/08/02 16:50:33 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4} {1000 15 5} {1000 19 6}]
+2022/08/02 16:50:33 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:33 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4} {1000 15 5} {1000 19 6}]
+2022/08/02 16:50:33 server 1 receive commit
+2022/08/02 16:50:33 server 2 receive commit
+2022/08/02 16:50:33 server 2 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:33 server 0 receive commit
+2022/08/02 16:50:33 server 4 receive commit
+2022/08/02 16:50:33 server 4 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:33 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:33 server 3 receive commit
+2022/08/02 16:50:33 server 3 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:34 server 2 在term 20 当选为leader
+2022/08/02 16:50:34 server 2 在term 21 当选为leader
+2022/08/02 16:50:34 server 2 在term 22 当选为leader
+2022/08/02 16:50:35 server 2 在term 23 当选为leader
+2022/08/02 16:50:35 loop is 4
+2022/08/02 16:50:35 log is {1000 23 7}
+2022/08/02 16:50:35 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4} {1000 15 5} {1000 19 6} {1000 23 7}]
+2022/08/02 16:50:35 当前index是: 7
+2022/08/02 16:50:35 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4} {1000 15 5} {1000 19 6} {1000 23 7}]
+2022/08/02 16:50:35 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 12 4} {1000 15 5} {1000 19 6} {1000 23 7}]
+2022/08/02 16:50:35 server 1 receive commit
+2022/08/02 16:50:35 server 4 receive commit
+2022/08/02 16:50:35 server 4 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:35 server 0 receive commit
+2022/08/02 16:50:35 server 2 receive commit
+2022/08/02 16:50:35 server 2 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:35 server 3 receive commit
+2022/08/02 16:50:35 server 3 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:35 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:35 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:50:36 server 2 在term 24 当选为leader
+2022/08/02 16:50:36 server 2 在term 25 当选为leader
+2022/08/02 16:50:36 server 2 在term 26 当选为leader
+2022/08/02 16:50:37 server 2 在term 27 当选为leader
+--- FAIL: TestFailNoAgree2B (13.06s)
+    config.go:616: one(1000) failed to reach agreement
+FAIL
+exit status 1
+FAIL	6.824/raft	13.061s
+
+loop 7
+2022/08/02 16:50:37 
+2022/08/02 16:50:37 
+2022/08/02 16:50:37 
+2022/08/02 16:50:37 
+2022/08/02 16:50:37 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:50:37 loop is 0
+2022/08/02 16:50:37 log is {10 1 1}
+2022/08/02 16:50:37 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:37 当前index是: 1
+2022/08/02 16:50:37 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:37 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:37 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:37 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:37 server 1 receive commit
+2022/08/02 16:50:37 server 4 receive commit
+2022/08/02 16:50:37 server 0 receive commit
+2022/08/02 16:50:37 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:37 server 3 receive commit
+2022/08/02 16:50:37 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:37 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:37 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:37 server 2 receive commit
+2022/08/02 16:50:37 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:37 commit index is 1
+2022/08/02 16:50:38 server 3 在term 2 当选为leader
+2022/08/02 16:50:38 server 2 在term 3 当选为leader
+2022/08/02 16:50:38 disconnect server: 3 4 0
+2022/08/02 16:50:38 log is {20 3 2}
+2022/08/02 16:50:38 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 3 2}]
+2022/08/02 16:50:38 server 1 logs are [{<nil> 0 0} {10 1 1} {20 3 2}]
+2022/08/02 16:50:39 server 2 在term 5 当选为leader
+2022/08/02 16:50:40 connect server: 3 4 0
+2022/08/02 16:50:40 server 3 在term 8 当选为leader
+2022/08/02 16:50:40 log is {30 8 2}
+2022/08/02 16:50:40 leader 3 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:40 loop is 0
+2022/08/02 16:50:40 log is {1000 8 3}
+2022/08/02 16:50:40 leader 3 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3}]
+2022/08/02 16:50:40 当前index是: 3
+2022/08/02 16:50:40 server 1 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:40 server 0 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:40 server 4 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:40 server 2 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:40 server 4 receive commit
+2022/08/02 16:50:40 server 1 receive commit
+2022/08/02 16:50:40 server 2 receive commit
+2022/08/02 16:50:40 server 3 receive commit
+2022/08/02 16:50:40 server 3 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:50:40 server 3 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:50:40 server 0 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:40 server 2 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:50:40 server 1 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:40 server 0 receive commit
+2022/08/02 16:50:40 server 0 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3}]
+2022/08/02 16:50:40 server 1 receive commit
+2022/08/02 16:50:40 server 4 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3}]
+2022/08/02 16:50:40 server 2 receive commit
+2022/08/02 16:50:40 server 0 receive commit
+2022/08/02 16:50:40 server 0 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:50:40 server 0 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:50:40 server 3 receive commit
+2022/08/02 16:50:40 server 4 receive commit
+2022/08/02 16:50:40 server 4 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:50:40 server 4 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:50:41 server 3 在term 9 当选为leader
+2022/08/02 16:50:41 server 3 在term 10 当选为leader
+2022/08/02 16:50:42 server 3 在term 11 当选为leader
+2022/08/02 16:50:42 loop is 1
+2022/08/02 16:50:42 log is {1000 11 4}
+2022/08/02 16:50:42 leader 3 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4}]
+2022/08/02 16:50:42 当前index是: 4
+2022/08/02 16:50:42 server 1 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:42 server 2 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:42 server 0 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4}]
+2022/08/02 16:50:42 server 4 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4}]
+2022/08/02 16:50:42 server 4 receive commit
+2022/08/02 16:50:42 server 4 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:42 server 1 receive commit
+2022/08/02 16:50:42 server 2 receive commit
+2022/08/02 16:50:42 server 3 receive commit
+2022/08/02 16:50:42 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:42 server 0 receive commit
+2022/08/02 16:50:42 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:43 server 3 在term 12 当选为leader
+2022/08/02 16:50:43 server 3 在term 13 当选为leader
+2022/08/02 16:50:43 server 3 在term 14 当选为leader
+2022/08/02 16:50:44 server 3 在term 15 当选为leader
+2022/08/02 16:50:44 loop is 2
+2022/08/02 16:50:44 log is {1000 15 5}
+2022/08/02 16:50:44 leader 3 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4} {1000 15 5}]
+2022/08/02 16:50:44 当前index是: 5
+2022/08/02 16:50:44 server 0 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4} {1000 15 5}]
+2022/08/02 16:50:44 server 1 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:44 server 0 receive commit
+2022/08/02 16:50:44 server 0 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:44 server 1 receive commit
+2022/08/02 16:50:44 server 2 receive commit
+2022/08/02 16:50:44 server 3 receive commit
+2022/08/02 16:50:44 server 3 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:44 server 4 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4} {1000 15 5}]
+2022/08/02 16:50:44 server 4 receive commit
+2022/08/02 16:50:44 server 4 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:44 server 2 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:45 server 3 在term 16 当选为leader
+2022/08/02 16:50:45 server 3 在term 17 当选为leader
+2022/08/02 16:50:46 server 3 在term 18 当选为leader
+2022/08/02 16:50:46 server 3 在term 19 当选为leader
+2022/08/02 16:50:46 loop is 3
+2022/08/02 16:50:46 log is {1000 19 6}
+2022/08/02 16:50:46 leader 3 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4} {1000 15 5} {1000 19 6}]
+2022/08/02 16:50:46 当前index是: 6
+2022/08/02 16:50:46 server 0 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4} {1000 15 5} {1000 19 6}]
+2022/08/02 16:50:46 server 1 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:46 server 4 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4} {1000 15 5} {1000 19 6}]
+2022/08/02 16:50:46 server 4 receive commit
+2022/08/02 16:50:46 server 4 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:46 server 2 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:46 server 0 receive commit
+2022/08/02 16:50:46 server 0 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:46 server 1 receive commit
+2022/08/02 16:50:46 server 2 receive commit
+2022/08/02 16:50:46 server 3 receive commit
+2022/08/02 16:50:46 server 3 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:47 server 3 在term 20 当选为leader
+2022/08/02 16:50:47 server 3 在term 21 当选为leader
+2022/08/02 16:50:48 server 3 在term 22 当选为leader
+2022/08/02 16:50:48 loop is 4
+2022/08/02 16:50:48 log is {1000 22 7}
+2022/08/02 16:50:48 leader 3 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4} {1000 15 5} {1000 19 6} {1000 22 7}]
+2022/08/02 16:50:48 当前index是: 7
+2022/08/02 16:50:48 server 1 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:48 server 4 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4} {1000 15 5} {1000 19 6} {1000 22 7}]
+2022/08/02 16:50:48 server 4 receive commit
+2022/08/02 16:50:48 server 4 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:48 server 0 receive commit
+2022/08/02 16:50:48 server 1 receive commit
+2022/08/02 16:50:48 server 2 receive commit
+2022/08/02 16:50:48 server 3 receive commit
+2022/08/02 16:50:48 server 3 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:50:48 server 0 logs are [{<nil> 0 0} {10 1 1} {30 8 2} {1000 8 3} {1000 11 4} {1000 15 5} {1000 19 6} {1000 22 7}]
+2022/08/02 16:50:48 server 2 logs are [{<nil> 0 0} {10 1 1} {30 8 2}]
+2022/08/02 16:50:49 server 3 在term 23 当选为leader
+2022/08/02 16:50:49 server 3 在term 24 当选为leader
+2022/08/02 16:50:50 server 3 在term 25 当选为leader
+2022/08/02 16:50:50 server 3 在term 26 当选为leader
+--- FAIL: TestFailNoAgree2B (13.06s)
+    config.go:616: one(1000) failed to reach agreement
+FAIL
+exit status 1
+FAIL	6.824/raft	13.062s
+
+loop 8
+2022/08/02 16:50:50 
+2022/08/02 16:50:50 
+2022/08/02 16:50:50 
+2022/08/02 16:50:50 
+2022/08/02 16:50:50 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:50:50 loop is 0
+2022/08/02 16:50:50 log is {10 1 1}
+2022/08/02 16:50:50 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:50 当前index是: 1
+2022/08/02 16:50:50 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:50 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:50 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:50 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:50 server 4 receive commit
+2022/08/02 16:50:50 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:50 server 2 receive commit
+2022/08/02 16:50:50 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:50 server 0 receive commit
+2022/08/02 16:50:50 server 3 receive commit
+2022/08/02 16:50:50 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:50 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:50 server 1 receive commit
+2022/08/02 16:50:50 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:50 commit index is 1
+2022/08/02 16:50:51 server 3 在term 2 当选为leader
+2022/08/02 16:50:51 disconnect server: 4 0 1
+2022/08/02 16:50:51 log is {20 2 2}
+2022/08/02 16:50:51 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:51 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:52 server 3 在term 6 当选为leader
+2022/08/02 16:50:53 connect server: 4 0 1
+2022/08/02 16:50:53 server 3 在term 7 当选为leader
+2022/08/02 16:50:53 log is {30 7 3}
+2022/08/02 16:50:53 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:50:53 loop is 0
+2022/08/02 16:50:53 log is {1000 7 4}
+2022/08/02 16:50:53 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:50:53 当前index是: 4
+2022/08/02 16:50:53 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:50:53 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:53 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:50:53 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:50:53 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:53 server 0 receive commit
+2022/08/02 16:50:53 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:50:53 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:50:53 server 1 receive commit
+2022/08/02 16:50:53 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:50:53 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:50:53 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:53 server 2 receive commit
+2022/08/02 16:50:53 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:53 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:50:53 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:50:53 server 3 receive commit
+2022/08/02 16:50:53 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:50:53 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:50:53 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:53 server 4 receive commit
+2022/08/02 16:50:53 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:50:53 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:50:53 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:50:53 server 2 receive commit
+2022/08/02 16:50:53 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:50:53 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:50:53 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:53 server 3 receive commit
+2022/08/02 16:50:53 server 4 receive commit
+2022/08/02 16:50:53 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:50:53 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:50:53 server 0 receive commit
+2022/08/02 16:50:53 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:50:53 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:50:53 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:50:53 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:50:53 server 1 receive commit
+2022/08/02 16:50:54 server 3 在term 8 当选为leader
+2022/08/02 16:50:54 server 3 在term 9 当选为leader
+2022/08/02 16:50:55 server 3 在term 10 当选为leader
+2022/08/02 16:50:55 server 3 在term 11 当选为leader
+2022/08/02 16:50:55 loop is 1
+2022/08/02 16:50:55 log is {1000 11 5}
+2022/08/02 16:50:55 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5}]
+2022/08/02 16:50:55 当前index是: 5
+2022/08/02 16:50:55 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5}]
+2022/08/02 16:50:55 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5}]
+2022/08/02 16:50:55 server 4 receive commit
+2022/08/02 16:50:55 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5}]
+2022/08/02 16:50:55 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5}]
+2022/08/02 16:50:55 server 0 receive commit
+2022/08/02 16:50:55 server 0 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:55 server 1 receive commit
+2022/08/02 16:50:55 server 1 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:55 server 2 receive commit
+2022/08/02 16:50:55 server 2 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:55 server 3 receive commit
+2022/08/02 16:50:55 server 3 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:50:56 server 3 在term 12 当选为leader
+2022/08/02 16:50:56 server 3 在term 13 当选为leader
+2022/08/02 16:50:57 server 3 在term 14 当选为leader
+2022/08/02 16:50:57 server 3 在term 15 当选为leader
+2022/08/02 16:50:57 loop is 2
+2022/08/02 16:50:57 log is {1000 15 6}
+2022/08/02 16:50:57 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5} {1000 15 6}]
+2022/08/02 16:50:57 当前index是: 6
+2022/08/02 16:50:57 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5} {1000 15 6}]
+2022/08/02 16:50:57 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5} {1000 15 6}]
+2022/08/02 16:50:57 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5} {1000 15 6}]
+2022/08/02 16:50:57 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5} {1000 15 6}]
+2022/08/02 16:50:57 server 1 receive commit
+2022/08/02 16:50:57 server 1 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:57 server 2 receive commit
+2022/08/02 16:50:57 server 2 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:57 server 3 receive commit
+2022/08/02 16:50:57 server 3 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:57 server 4 receive commit
+2022/08/02 16:50:57 server 4 log length is 7, commit index is 1, args index is 6
+2022/08/02 16:50:57 server 4 log length is 7, commit index is 2, args index is 6
+2022/08/02 16:50:57 server 4 log length is 7, commit index is 3, args index is 6
+2022/08/02 16:50:57 server 4 log length is 7, commit index is 4, args index is 6
+2022/08/02 16:50:57 server 4 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:57 server 0 receive commit
+2022/08/02 16:50:57 server 0 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:50:57 commit index is 6
+  ... Passed --   7.0  5 134779 32445569    6
+PASS
+ok  	6.824/raft	7.015s
+
+loop 9
+2022/08/02 16:50:58 
+2022/08/02 16:50:58 
+2022/08/02 16:50:58 
+2022/08/02 16:50:58 
+2022/08/02 16:50:58 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:50:58 loop is 0
+2022/08/02 16:50:58 log is {10 1 1}
+2022/08/02 16:50:58 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:58 当前index是: 1
+2022/08/02 16:50:58 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:58 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:58 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:58 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:50:58 server 0 receive commit
+2022/08/02 16:50:58 server 3 receive commit
+2022/08/02 16:50:58 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:58 server 4 receive commit
+2022/08/02 16:50:58 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:58 server 2 receive commit
+2022/08/02 16:50:58 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:58 server 1 receive commit
+2022/08/02 16:50:58 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:58 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:50:58 commit index is 1
+2022/08/02 16:50:58 server 2 在term 2 当选为leader
+2022/08/02 16:50:58 disconnect server: 3 4 0
+2022/08/02 16:50:58 log is {20 2 2}
+2022/08/02 16:50:58 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:58 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:50:59 server 2 在term 4 当选为leader
+2022/08/02 16:51:00 connect server: 3 4 0
+2022/08/02 16:51:00 server 2 在term 8 当选为leader
+2022/08/02 16:51:01 server 2 在term 9 当选为leader
+2022/08/02 16:51:01 log is {30 9 3}
+2022/08/02 16:51:01 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3}]
+2022/08/02 16:51:01 loop is 0
+2022/08/02 16:51:01 log is {1000 9 4}
+2022/08/02 16:51:01 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 当前index是: 4
+2022/08/02 16:51:01 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:01 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:01 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:01 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3}]
+2022/08/02 16:51:01 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:01 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:01 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3}]
+2022/08/02 16:51:01 server 4 receive commit
+2022/08/02 16:51:01 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 server 4 receive commit
+2022/08/02 16:51:01 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3}]
+2022/08/02 16:51:01 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 server 0 receive commit
+2022/08/02 16:51:01 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:01 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:01 server 2 receive commit
+2022/08/02 16:51:01 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:01 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:01 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:01 server 1 receive commit
+2022/08/02 16:51:01 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:01 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:01 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 server 2 receive commit
+2022/08/02 16:51:01 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4}]
+2022/08/02 16:51:01 server 0 receive commit
+2022/08/02 16:51:01 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:01 server 3 receive commit
+2022/08/02 16:51:01 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:01 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:01 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:01 server 1 receive commit
+2022/08/02 16:51:01 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:01 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:01 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:01 server 3 receive commit
+2022/08/02 16:51:01 server 2 在term 10 当选为leader
+2022/08/02 16:51:02 server 2 在term 11 当选为leader
+2022/08/02 16:51:02 server 2 在term 12 当选为leader
+2022/08/02 16:51:03 loop is 1
+2022/08/02 16:51:03 log is {1000 12 5}
+2022/08/02 16:51:03 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4} {1000 12 5}]
+2022/08/02 16:51:03 当前index是: 5
+2022/08/02 16:51:03 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4} {1000 12 5}]
+2022/08/02 16:51:03 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4} {1000 12 5}]
+2022/08/02 16:51:03 server 4 receive commit
+2022/08/02 16:51:03 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4} {1000 12 5}]
+2022/08/02 16:51:03 server 1 receive commit
+2022/08/02 16:51:03 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4} {1000 12 5}]
+2022/08/02 16:51:03 server 2 receive commit
+2022/08/02 16:51:03 server 2 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:03 server 0 receive commit
+2022/08/02 16:51:03 server 3 receive commit
+2022/08/02 16:51:03 server 3 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:03 server 2 在term 13 当选为leader
+2022/08/02 16:51:03 server 2 在term 14 当选为leader
+2022/08/02 16:51:04 server 2 在term 15 当选为leader
+2022/08/02 16:51:04 server 2 在term 16 当选为leader
+2022/08/02 16:51:05 loop is 2
+2022/08/02 16:51:05 log is {1000 16 6}
+2022/08/02 16:51:05 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4} {1000 12 5} {1000 16 6}]
+2022/08/02 16:51:05 当前index是: 6
+2022/08/02 16:51:05 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4} {1000 12 5} {1000 16 6}]
+2022/08/02 16:51:05 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4} {1000 12 5} {1000 16 6}]
+2022/08/02 16:51:05 server 4 receive commit
+2022/08/02 16:51:05 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4} {1000 12 5} {1000 16 6}]
+2022/08/02 16:51:05 server 1 receive commit
+2022/08/02 16:51:05 server 1 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:05 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 9 3} {1000 9 4} {1000 12 5} {1000 16 6}]
+2022/08/02 16:51:05 server 2 receive commit
+2022/08/02 16:51:05 server 2 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:05 server 0 receive commit
+2022/08/02 16:51:05 server 0 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:05 server 3 receive commit
+2022/08/02 16:51:05 server 3 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:05 apply error: server 1 apply out of order 6
+exit status 1
+FAIL	6.824/raft	7.036s
+
+loop 10
+2022/08/02 16:51:05 
+2022/08/02 16:51:05 
+2022/08/02 16:51:05 
+2022/08/02 16:51:05 
+2022/08/02 16:51:05 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:51:05 loop is 0
+2022/08/02 16:51:05 log is {10 1 1}
+2022/08/02 16:51:05 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:05 当前index是: 1
+2022/08/02 16:51:05 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:05 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:05 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:05 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:05 server 0 receive commit
+2022/08/02 16:51:05 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:05 server 1 receive commit
+2022/08/02 16:51:05 server 2 receive commit
+2022/08/02 16:51:05 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:05 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:05 server 3 receive commit
+2022/08/02 16:51:05 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:05 server 4 receive commit
+2022/08/02 16:51:05 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:05 commit index is 1
+2022/08/02 16:51:05 server 1 在term 2 当选为leader
+2022/08/02 16:51:05 disconnect server: 2 3 4
+2022/08/02 16:51:05 log is {20 2 2}
+2022/08/02 16:51:05 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:05 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:06 server 1 在term 4 当选为leader
+2022/08/02 16:51:07 connect server: 2 3 4
+2022/08/02 16:51:07 server 1 在term 6 当选为leader
+2022/08/02 16:51:08 log is {30 6 3}
+2022/08/02 16:51:08 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:51:08 loop is 0
+2022/08/02 16:51:08 log is {1000 6 4}
+2022/08/02 16:51:08 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 当前index是: 4
+2022/08/02 16:51:08 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:08 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:51:08 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:51:08 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:08 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:51:08 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:08 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 server 4 receive commit
+2022/08/02 16:51:08 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 server 4 receive commit
+2022/08/02 16:51:08 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 server 0 receive commit
+2022/08/02 16:51:08 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:08 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:08 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:08 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:51:08 server 2 receive commit
+2022/08/02 16:51:08 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:08 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:08 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:08 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 server 3 receive commit
+2022/08/02 16:51:08 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:08 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:08 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:08 server 0 receive commit
+2022/08/02 16:51:08 server 2 receive commit
+2022/08/02 16:51:08 server 1 receive commit
+2022/08/02 16:51:08 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:08 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:08 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:08 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:08 server 3 receive commit
+2022/08/02 16:51:08 server 1 receive commit
+2022/08/02 16:51:08 server 1 在term 7 当选为leader
+2022/08/02 16:51:09 server 1 在term 8 当选为leader
+2022/08/02 16:51:09 server 1 在term 9 当选为leader
+2022/08/02 16:51:09 server 1 在term 10 当选为leader
+2022/08/02 16:51:10 loop is 1
+2022/08/02 16:51:10 log is {1000 10 5}
+2022/08/02 16:51:10 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5}]
+2022/08/02 16:51:10 当前index是: 5
+2022/08/02 16:51:10 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5}]
+2022/08/02 16:51:10 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5}]
+2022/08/02 16:51:10 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5}]
+2022/08/02 16:51:10 server 4 receive commit
+2022/08/02 16:51:10 server 4 log length is 6, commit index is 1, args index is 5
+2022/08/02 16:51:10 server 4 log length is 6, commit index is 2, args index is 5
+2022/08/02 16:51:10 server 4 log length is 6, commit index is 3, args index is 5
+2022/08/02 16:51:10 server 4 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:10 server 0 receive commit
+2022/08/02 16:51:10 server 0 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:10 server 1 receive commit
+2022/08/02 16:51:10 server 1 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:10 server 2 receive commit
+2022/08/02 16:51:10 server 3 receive commit
+2022/08/02 16:51:10 server 3 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:10 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5}]
+2022/08/02 16:51:10 server 1 在term 11 当选为leader
+2022/08/02 16:51:11 server 1 在term 12 当选为leader
+2022/08/02 16:51:11 server 1 在term 13 当选为leader
+2022/08/02 16:51:11 server 1 在term 14 当选为leader
+2022/08/02 16:51:12 loop is 2
+2022/08/02 16:51:12 log is {1000 14 6}
+2022/08/02 16:51:12 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5} {1000 14 6}]
+2022/08/02 16:51:12 当前index是: 6
+2022/08/02 16:51:12 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5} {1000 14 6}]
+2022/08/02 16:51:12 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5} {1000 14 6}]
+2022/08/02 16:51:12 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5} {1000 14 6}]
+2022/08/02 16:51:12 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5} {1000 14 6}]
+2022/08/02 16:51:12 server 0 receive commit
+2022/08/02 16:51:12 server 0 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:12 server 3 receive commit
+2022/08/02 16:51:12 server 3 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:12 server 1 receive commit
+2022/08/02 16:51:12 server 1 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:12 server 2 receive commit
+2022/08/02 16:51:12 server 2 log length is 7, commit index is 4, args index is 6
+2022/08/02 16:51:12 server 2 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:12 server 4 receive commit
+2022/08/02 16:51:12 server 4 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:12 commit index is 6
+  ... Passed --   7.1  5 127269 30578000    6
+PASS
+ok  	6.824/raft	7.059s
+
+loop 11
+2022/08/02 16:51:12 
+2022/08/02 16:51:12 
+2022/08/02 16:51:12 
+2022/08/02 16:51:12 
+2022/08/02 16:51:12 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:51:12 loop is 0
+2022/08/02 16:51:12 log is {10 1 1}
+2022/08/02 16:51:12 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:12 当前index是: 1
+2022/08/02 16:51:12 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:12 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:12 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:12 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:12 server 0 receive commit
+2022/08/02 16:51:12 server 3 receive commit
+2022/08/02 16:51:12 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:12 server 4 receive commit
+2022/08/02 16:51:12 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:12 server 1 receive commit
+2022/08/02 16:51:12 server 2 receive commit
+2022/08/02 16:51:12 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:12 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:12 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:12 commit index is 1
+2022/08/02 16:51:12 server 2 在term 2 当选为leader
+2022/08/02 16:51:12 disconnect server: 3 4 0
+2022/08/02 16:51:12 log is {20 2 2}
+2022/08/02 16:51:12 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:12 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:14 server 2 在term 4 当选为leader
+2022/08/02 16:51:14 connect server: 3 4 0
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:14 server 2 在term 6 当选为leader
+2022/08/02 16:51:15 log is {30 6 3}
+2022/08/02 16:51:15 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:51:15 loop is 0
+2022/08/02 16:51:15 log is {1000 6 4}
+2022/08/02 16:51:15 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:15 当前index是: 4
+2022/08/02 16:51:15 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:51:15 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:15 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:51:15 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:15 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:15 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:51:15 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:15 server 4 receive commit
+2022/08/02 16:51:15 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:15 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:15 server 0 receive commit
+2022/08/02 16:51:15 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:15 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:15 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:15 server 2 receive commit
+2022/08/02 16:51:15 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:15 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:15 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:15 server 3 receive commit
+2022/08/02 16:51:15 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:15 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:15 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:15 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:15 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:51:15 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:15 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:15 server 1 receive commit
+2022/08/02 16:51:15 server 4 receive commit
+2022/08/02 16:51:15 server 4 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:15 server 4 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:15 server 4 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:15 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:15 server 1 receive commit
+2022/08/02 16:51:15 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:15 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:15 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:15 server 0 receive commit
+2022/08/02 16:51:15 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:51:15 server 2 receive commit
+2022/08/02 16:51:15 server 3 receive commit
+2022/08/02 16:51:15 commit index is 4
+  ... Passed --   3.1  5 23540 5522715    4
+PASS
+ok  	6.824/raft	3.054s
+
+loop 12
+2022/08/02 16:51:15 
+2022/08/02 16:51:15 
+2022/08/02 16:51:15 
+2022/08/02 16:51:15 
+2022/08/02 16:51:15 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:51:15 loop is 0
+2022/08/02 16:51:15 log is {10 1 1}
+2022/08/02 16:51:15 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:15 当前index是: 1
+2022/08/02 16:51:15 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:15 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:15 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:15 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:15 server 4 receive commit
+2022/08/02 16:51:15 server 1 receive commit
+2022/08/02 16:51:15 server 2 receive commit
+2022/08/02 16:51:15 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:15 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:15 server 0 receive commit
+2022/08/02 16:51:15 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:15 server 3 receive commit
+2022/08/02 16:51:15 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:15 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:15 commit index is 1
+2022/08/02 16:51:15 server 2 在term 2 当选为leader
+2022/08/02 16:51:16 disconnect server: 3 4 0
+2022/08/02 16:51:16 log is {20 2 2}
+2022/08/02 16:51:16 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:16 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:17 server 2 在term 4 当选为leader
+2022/08/02 16:51:18 connect server: 3 4 0
+2022/08/02 16:51:18 server 1 在term 7 当选为leader
+2022/08/02 16:51:18 log is {30 7 3}
+2022/08/02 16:51:18 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:18 loop is 0
+2022/08/02 16:51:18 log is {1000 7 4}
+2022/08/02 16:51:18 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:18 当前index是: 4
+2022/08/02 16:51:18 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:18 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:18 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:18 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:18 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:18 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:18 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:18 server 0 receive commit
+2022/08/02 16:51:18 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:18 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:18 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:18 server 1 receive commit
+2022/08/02 16:51:18 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:18 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:18 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:18 server 2 receive commit
+2022/08/02 16:51:18 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:18 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:18 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:18 server 3 receive commit
+2022/08/02 16:51:18 server 4 receive commit
+2022/08/02 16:51:18 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:18 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:18 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:18 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:18 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:18 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:18 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:18 server 0 receive commit
+2022/08/02 16:51:18 server 1 receive commit
+2022/08/02 16:51:18 server 2 receive commit
+2022/08/02 16:51:18 server 3 receive commit
+2022/08/02 16:51:18 server 4 receive commit
+2022/08/02 16:51:18 server 4 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:18 server 4 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:18 server 4 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:18 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:19 server 1 在term 8 当选为leader
+2022/08/02 16:51:19 server 1 在term 9 当选为leader
+2022/08/02 16:51:19 server 1 在term 10 当选为leader
+2022/08/02 16:51:20 server 1 在term 11 当选为leader
+2022/08/02 16:51:20 loop is 1
+2022/08/02 16:51:20 log is {1000 11 5}
+2022/08/02 16:51:20 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5}]
+2022/08/02 16:51:20 当前index是: 5
+2022/08/02 16:51:20 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5}]
+2022/08/02 16:51:20 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5}]
+2022/08/02 16:51:20 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5}]
+2022/08/02 16:51:20 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4} {1000 11 5}]
+2022/08/02 16:51:20 server 4 receive commit
+2022/08/02 16:51:20 server 4 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:20 server 2 receive commit
+2022/08/02 16:51:20 server 2 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:20 server 0 receive commit
+2022/08/02 16:51:20 server 0 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:20 server 1 receive commit
+2022/08/02 16:51:20 server 1 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:20 server 3 receive commit
+2022/08/02 16:51:20 server 3 log length is 6, commit index is 1, args index is 5
+2022/08/02 16:51:20 server 3 log length is 6, commit index is 2, args index is 5
+2022/08/02 16:51:20 server 3 log length is 6, commit index is 3, args index is 5
+2022/08/02 16:51:20 server 3 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:20 commit index is 5
+  ... Passed --   5.1  5 41998 9998000    5
+PASS
+ok  	6.824/raft	5.064s
+
+loop 13
+2022/08/02 16:51:20 
+2022/08/02 16:51:20 
+2022/08/02 16:51:20 
+2022/08/02 16:51:20 
+2022/08/02 16:51:20 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:51:20 loop is 0
+2022/08/02 16:51:20 log is {10 1 1}
+2022/08/02 16:51:20 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:20 当前index是: 1
+2022/08/02 16:51:20 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:20 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:20 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:20 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:20 server 3 receive commit
+2022/08/02 16:51:20 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:20 server 1 receive commit
+2022/08/02 16:51:20 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:20 server 0 receive commit
+2022/08/02 16:51:20 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:20 server 2 receive commit
+2022/08/02 16:51:20 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:20 server 4 receive commit
+2022/08/02 16:51:20 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:20 commit index is 1
+2022/08/02 16:51:21 server 1 在term 2 当选为leader
+2022/08/02 16:51:21 disconnect server: 2 3 4
+2022/08/02 16:51:21 log is {20 2 2}
+2022/08/02 16:51:21 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:21 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:22 server 1 在term 5 当选为leader
+2022/08/02 16:51:23 connect server: 2 3 4
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:23 server 0 在term 8 当选为leader
+2022/08/02 16:51:23 log is {30 8 3}
+2022/08/02 16:51:23 leader 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:23 loop is 0
+2022/08/02 16:51:23 log is {1000 8 4}
+2022/08/02 16:51:23 leader 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:23 当前index是: 4
+2022/08/02 16:51:23 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:23 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:23 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:23 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:23 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:23 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:23 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:23 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:23 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:23 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:23 server 4 receive commit
+2022/08/02 16:51:23 server 4 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:23 server 4 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:23 server 4 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:23 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:23 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:23 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:23 server 4 receive commit
+2022/08/02 16:51:23 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:23 server 3 receive commit
+2022/08/02 16:51:23 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:23 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:23 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:23 server 2 receive commit
+2022/08/02 16:51:23 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:23 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:23 server 1 receive commit
+2022/08/02 16:51:23 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:23 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:23 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:23 server 0 receive commit
+2022/08/02 16:51:23 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:23 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:23 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:23 server 2 receive commit
+2022/08/02 16:51:23 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:23 server 3 receive commit
+2022/08/02 16:51:23 server 0 receive commit
+2022/08/02 16:51:23 server 1 receive commit
+2022/08/02 16:51:23 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:23 commit index is 4
+  ... Passed --   3.1  5 20210 4704352    4
+PASS
+ok  	6.824/raft	3.064s
+
+loop 14
+2022/08/02 16:51:23 
+2022/08/02 16:51:23 
+2022/08/02 16:51:23 
+2022/08/02 16:51:23 
+2022/08/02 16:51:23 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:51:23 loop is 0
+2022/08/02 16:51:23 log is {10 1 1}
+2022/08/02 16:51:23 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:23 当前index是: 1
+2022/08/02 16:51:23 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:23 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:23 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:23 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:23 server 2 receive commit
+2022/08/02 16:51:23 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:23 server 4 receive commit
+2022/08/02 16:51:23 server 1 receive commit
+2022/08/02 16:51:23 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:23 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:23 server 0 receive commit
+2022/08/02 16:51:23 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:23 server 3 receive commit
+2022/08/02 16:51:23 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:23 commit index is 1
+2022/08/02 16:51:24 server 4 在term 2 当选为leader
+2022/08/02 16:51:24 disconnect server: 0 1 2
+2022/08/02 16:51:24 log is {20 2 2}
+2022/08/02 16:51:24 leader 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:24 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:25 server 4 在term 4 当选为leader
+2022/08/02 16:51:26 connect server: 0 1 2
+2022/08/02 16:51:26 server 4 在term 6 当选为leader
+2022/08/02 16:51:26 server 4 在term 7 当选为leader
+2022/08/02 16:51:26 log is {30 7 3}
+2022/08/02 16:51:26 leader 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:26 loop is 0
+2022/08/02 16:51:26 log is {1000 7 4}
+2022/08/02 16:51:26 leader 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:26 当前index是: 4
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:26 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:26 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:26 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:26 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:26 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:26 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:26 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:26 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:26 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:26 server 0 receive commit
+2022/08/02 16:51:26 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:26 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:26 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:26 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:26 server 1 receive commit
+2022/08/02 16:51:26 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:26 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:26 server 2 receive commit
+2022/08/02 16:51:26 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:26 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:26 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:26 server 0 receive commit
+2022/08/02 16:51:26 server 3 receive commit
+2022/08/02 16:51:26 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:26 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:26 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:26 server 2 receive commit
+2022/08/02 16:51:26 server 4 receive commit
+2022/08/02 16:51:26 server 4 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:26 server 4 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:26 server 4 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:26 server 3 receive commit
+2022/08/02 16:51:26 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:26 server 4 receive commit
+2022/08/02 16:51:26 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:26 server 1 receive commit
+2022/08/02 16:51:26 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:26 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:26 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:26 commit index is 4
+  ... Passed --   3.0  5 7660 1637252    4
+PASS
+ok  	6.824/raft	3.038s
+
+loop 15
+2022/08/02 16:51:27 
+2022/08/02 16:51:27 
+2022/08/02 16:51:27 
+2022/08/02 16:51:27 
+2022/08/02 16:51:27 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:51:27 loop is 0
+2022/08/02 16:51:27 log is {10 1 1}
+2022/08/02 16:51:27 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:27 当前index是: 1
+2022/08/02 16:51:27 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:27 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:27 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:27 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:27 server 0 receive commit
+2022/08/02 16:51:27 server 2 receive commit
+2022/08/02 16:51:27 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:27 server 1 receive commit
+2022/08/02 16:51:27 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:27 server 3 receive commit
+2022/08/02 16:51:27 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:27 server 4 receive commit
+2022/08/02 16:51:27 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:27 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:27 commit index is 1
+2022/08/02 16:51:27 server 3 在term 2 当选为leader
+2022/08/02 16:51:27 disconnect server: 4 0 1
+2022/08/02 16:51:27 log is {20 2 2}
+2022/08/02 16:51:27 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:27 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:28 server 3 在term 4 当选为leader
+2022/08/02 16:51:29 connect server: 4 0 1
+2022/08/02 16:51:29 server 1 在term 6 当选为leader
+2022/08/02 16:51:29 server 1 在term 7 当选为leader
+2022/08/02 16:51:30 log is {30 7 2}
+2022/08/02 16:51:30 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:30 loop is 0
+2022/08/02 16:51:30 log is {1000 7 3}
+2022/08/02 16:51:30 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:51:30 当前index是: 3
+2022/08/02 16:51:30 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:30 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:30 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:30 server 4 receive commit
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:30 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:30 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:51:30 server 0 receive commit
+2022/08/02 16:51:30 server 0 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:51:30 server 0 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:51:30 server 1 receive commit
+2022/08/02 16:51:30 server 1 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:51:30 server 1 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:51:30 server 2 receive commit
+2022/08/02 16:51:30 server 3 receive commit
+2022/08/02 16:51:30 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:30 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:30 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:30 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:51:30 server 2 receive commit
+2022/08/02 16:51:30 server 3 receive commit
+2022/08/02 16:51:30 server 1 receive commit
+2022/08/02 16:51:30 server 4 receive commit
+2022/08/02 16:51:30 server 4 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:51:30 server 4 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:51:30 server 0 receive commit
+2022/08/02 16:51:30 server 1 在term 8 当选为leader
+2022/08/02 16:51:31 server 1 在term 9 当选为leader
+2022/08/02 16:51:31 server 1 在term 10 当选为leader
+2022/08/02 16:51:31 server 1 在term 11 当选为leader
+2022/08/02 16:51:32 loop is 1
+2022/08/02 16:51:32 log is {1000 11 4}
+2022/08/02 16:51:32 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4}]
+2022/08/02 16:51:32 当前index是: 4
+2022/08/02 16:51:32 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:32 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4}]
+2022/08/02 16:51:32 server 4 receive commit
+2022/08/02 16:51:32 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4}]
+2022/08/02 16:51:32 server 0 receive commit
+2022/08/02 16:51:32 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:32 server 1 receive commit
+2022/08/02 16:51:32 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:32 server 3 receive commit
+2022/08/02 16:51:32 server 2 receive commit
+2022/08/02 16:51:32 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:32 server 1 在term 12 当选为leader
+2022/08/02 16:51:33 server 1 在term 13 当选为leader
+2022/08/02 16:51:33 server 1 在term 14 当选为leader
+2022/08/02 16:51:34 loop is 2
+2022/08/02 16:51:34 log is {1000 14 5}
+2022/08/02 16:51:34 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5}]
+2022/08/02 16:51:34 当前index是: 5
+2022/08/02 16:51:34 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5}]
+2022/08/02 16:51:34 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:34 server 4 receive commit
+2022/08/02 16:51:34 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5}]
+2022/08/02 16:51:34 server 0 receive commit
+2022/08/02 16:51:34 server 0 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:34 server 1 receive commit
+2022/08/02 16:51:34 server 1 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:34 server 2 receive commit
+2022/08/02 16:51:34 server 3 receive commit
+2022/08/02 16:51:34 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:34 server 1 在term 15 当选为leader
+2022/08/02 16:51:34 server 1 在term 16 当选为leader
+2022/08/02 16:51:35 server 1 在term 17 当选为leader
+2022/08/02 16:51:35 server 1 在term 18 当选为leader
+2022/08/02 16:51:36 loop is 3
+2022/08/02 16:51:36 log is {1000 18 6}
+2022/08/02 16:51:36 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 18 6}]
+2022/08/02 16:51:36 当前index是: 6
+2022/08/02 16:51:36 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 18 6}]
+2022/08/02 16:51:36 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:36 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:36 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 18 6}]
+2022/08/02 16:51:36 server 0 receive commit
+2022/08/02 16:51:36 server 0 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:36 server 1 receive commit
+2022/08/02 16:51:36 server 1 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:36 server 2 receive commit
+2022/08/02 16:51:36 server 3 receive commit
+2022/08/02 16:51:36 server 4 receive commit
+2022/08/02 16:51:36 server 4 log length is 7, commit index is 3, args index is 6
+2022/08/02 16:51:36 server 4 log length is 7, commit index is 4, args index is 6
+2022/08/02 16:51:36 server 4 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:36 server 1 在term 19 当选为leader
+2022/08/02 16:51:36 server 1 在term 20 当选为leader
+2022/08/02 16:51:37 server 1 在term 21 当选为leader
+2022/08/02 16:51:37 server 1 在term 22 当选为leader
+2022/08/02 16:51:38 loop is 4
+2022/08/02 16:51:38 log is {1000 22 7}
+2022/08/02 16:51:38 leader 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 18 6} {1000 22 7}]
+2022/08/02 16:51:38 当前index是: 7
+2022/08/02 16:51:38 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 18 6} {1000 22 7}]
+2022/08/02 16:51:38 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 14 5} {1000 18 6} {1000 22 7}]
+2022/08/02 16:51:38 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:38 server 4 receive commit
+2022/08/02 16:51:38 server 4 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:51:38 server 2 receive commit
+2022/08/02 16:51:38 server 3 receive commit
+2022/08/02 16:51:38 server 0 receive commit
+2022/08/02 16:51:38 server 0 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:51:38 server 1 receive commit
+2022/08/02 16:51:38 server 1 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:51:38 server 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:38 server 1 在term 23 当选为leader
+2022/08/02 16:51:38 server 1 在term 24 当选为leader
+2022/08/02 16:51:39 server 1 在term 25 当选为leader
+2022/08/02 16:51:39 server 1 在term 26 当选为leader
+2022/08/02 16:51:40 server 1 在term 27 当选为leader
+--- FAIL: TestFailNoAgree2B (13.03s)
+    config.go:616: one(1000) failed to reach agreement
+FAIL
+exit status 1
+FAIL	6.824/raft	13.031s
+
+loop 16
+2022/08/02 16:51:40 
+2022/08/02 16:51:40 
+2022/08/02 16:51:40 
+2022/08/02 16:51:40 
+2022/08/02 16:51:40 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:51:40 loop is 0
+2022/08/02 16:51:40 log is {10 1 1}
+2022/08/02 16:51:40 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:40 当前index是: 1
+2022/08/02 16:51:40 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:40 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:40 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:40 server 3 receive commit
+2022/08/02 16:51:40 server 2 receive commit
+2022/08/02 16:51:40 server 1 receive commit
+2022/08/02 16:51:40 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:40 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:40 server 0 receive commit
+2022/08/02 16:51:40 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:40 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:40 server 4 receive commit
+2022/08/02 16:51:40 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:40 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:40 commit index is 1
+2022/08/02 16:51:40 server 2 在term 2 当选为leader
+2022/08/02 16:51:40 disconnect server: 3 4 0
+2022/08/02 16:51:40 log is {20 2 2}
+2022/08/02 16:51:40 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:40 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:42 server 2 在term 6 当选为leader
+2022/08/02 16:51:42 connect server: 3 4 0
+2022/08/02 16:51:42 server 2 在term 7 当选为leader
+2022/08/02 16:51:43 log is {30 7 3}
+2022/08/02 16:51:43 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:43 loop is 0
+2022/08/02 16:51:43 log is {1000 7 4}
+2022/08/02 16:51:43 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:43 当前index是: 4
+2022/08/02 16:51:43 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:43 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:43 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:43 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:43 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:43 server 4 receive commit
+2022/08/02 16:51:43 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:43 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:43 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:43 server 0 receive commit
+2022/08/02 16:51:43 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:43 server 4 receive commit
+2022/08/02 16:51:43 server 0 receive commit
+2022/08/02 16:51:43 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:43 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:43 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:43 server 2 receive commit
+2022/08/02 16:51:43 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:43 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:43 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:43 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3}]
+2022/08/02 16:51:43 server 3 receive commit
+2022/08/02 16:51:43 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 7 3} {1000 7 4}]
+2022/08/02 16:51:43 server 0 log length is 5, commit index is 2, args index is 4
+panic: runtime error: index out of range [5] with length 5
+
+goroutine 21436 [running]:
+6.824/raft.(*Raft).CommitLog(0xc0000f01c0, 0xc000d91ad0, 0x0?)
+	/home/addr/project/6.824/src/raft/raft.go:523 +0x25e
+reflect.Value.call({0xc0000aa240?, 0xc0000a8598?, 0xc0013c1b10?}, {0x616399, 0x4}, {0xc0013c1c68, 0x3, 0xc0013c1b40?})
+	/opt/go/src/reflect/value.go:556 +0x845
+reflect.Value.Call({0xc0000aa240?, 0xc0000a8598?, 0xc000e11008?}, {0xc0013c1c68, 0x3, 0x3})
+	/opt/go/src/reflect/value.go:339 +0xbf
+6.824/labrpc.(*Service).dispatch(0xc0000ade00, {0x61896e, 0x9}, {{0x5d7d40, 0xc00009f9d0}, {0x618969, 0xe}, {0x661fc0, 0x5cf1a0}, {0xc000891f00, ...}, ...})
+	/home/addr/project/6.824/src/labrpc/labrpc.go:496 +0x38e
+6.824/labrpc.(*Server).dispatch(0xc0000b6750, {{0x5d7d40, 0xc00009f9d0}, {0x618969, 0xe}, {0x661fc0, 0x5cf1a0}, {0xc000891f00, 0x39, 0x40}, ...})
+	/home/addr/project/6.824/src/labrpc/labrpc.go:420 +0x1fe
+6.824/labrpc.(*Network).processReq.func1()
+	/home/addr/project/6.824/src/labrpc/labrpc.go:240 +0x58
+created by 6.824/labrpc.(*Network).processReq
+	/home/addr/project/6.824/src/labrpc/labrpc.go:239 +0x1d7
+exit status 2
+FAIL	6.824/raft	3.070s
+
+loop 17
+2022/08/02 16:51:43 
+2022/08/02 16:51:43 
+2022/08/02 16:51:43 
+2022/08/02 16:51:43 
+2022/08/02 16:51:43 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:51:43 loop is 0
+2022/08/02 16:51:43 log is {10 1 1}
+2022/08/02 16:51:43 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:43 当前index是: 1
+2022/08/02 16:51:43 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:43 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:43 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:43 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:43 server 4 receive commit
+2022/08/02 16:51:43 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:43 server 2 receive commit
+2022/08/02 16:51:43 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:43 server 0 receive commit
+2022/08/02 16:51:43 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:43 server 1 receive commit
+2022/08/02 16:51:43 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:43 server 3 receive commit
+2022/08/02 16:51:43 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:43 commit index is 1
+2022/08/02 16:51:43 server 4 在term 2 当选为leader
+2022/08/02 16:51:43 disconnect server: 0 1 2
+2022/08/02 16:51:43 log is {20 2 2}
+2022/08/02 16:51:43 leader 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:43 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:45 server 4 在term 4 当选为leader
+2022/08/02 16:51:45 connect server: 0 1 2
+2022/08/02 16:51:46 server 3 在term 7 当选为leader
+2022/08/02 16:51:46 server 3 在term 8 当选为leader
+2022/08/02 16:51:46 log is {30 8 3}
+2022/08/02 16:51:46 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:46 loop is 0
+2022/08/02 16:51:46 log is {1000 8 4}
+2022/08/02 16:51:46 leader 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:46 当前index是: 4
+2022/08/02 16:51:46 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:46 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:46 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:46 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:46 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:46 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:46 server 4 receive commit
+2022/08/02 16:51:46 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:46 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:46 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:46 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:46 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:46 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:46 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:46 server 1 receive commit
+2022/08/02 16:51:46 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:46 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:46 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:46 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:46 server 2 receive commit
+2022/08/02 16:51:46 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:46 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:46 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:46 server 0 receive commit
+2022/08/02 16:51:46 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:46 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:46 server 3 receive commit
+2022/08/02 16:51:46 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:46 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:46 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:46 server 1 receive commit
+2022/08/02 16:51:46 server 0 receive commit
+2022/08/02 16:51:46 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:46 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:46 server 2 receive commit
+2022/08/02 16:51:46 server 4 receive commit
+2022/08/02 16:51:46 server 4 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:46 server 4 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:46 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:46 server 3 receive commit
+2022/08/02 16:51:46 server 4 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:46 commit index is 4
+  ... Passed --   3.1  5 9553 2109482    4
+PASS
+ok  	6.824/raft	3.087s
+
+loop 18
+2022/08/02 16:51:46 
+2022/08/02 16:51:46 
+2022/08/02 16:51:46 
+2022/08/02 16:51:46 
+2022/08/02 16:51:46 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:51:46 loop is 0
+2022/08/02 16:51:46 log is {10 1 1}
+2022/08/02 16:51:46 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:46 当前index是: 1
+2022/08/02 16:51:46 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:46 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:46 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:46 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:46 server 1 receive commit
+2022/08/02 16:51:46 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:46 server 4 receive commit
+2022/08/02 16:51:46 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:46 server 2 receive commit
+2022/08/02 16:51:46 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:46 server 0 receive commit
+2022/08/02 16:51:46 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:46 server 3 receive commit
+2022/08/02 16:51:46 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:46 commit index is 1
+2022/08/02 16:51:47 server 1 在term 2 当选为leader
+2022/08/02 16:51:47 disconnect server: 2 3 4
+2022/08/02 16:51:47 log is {20 2 2}
+2022/08/02 16:51:47 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:47 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:48 server 1 在term 5 当选为leader
+2022/08/02 16:51:49 server 1 在term 7 当选为leader
+2022/08/02 16:51:49 connect server: 2 3 4
+2022/08/02 16:51:49 server 1 在term 8 当选为leader
+2022/08/02 16:51:49 log is {30 8 3}
+2022/08/02 16:51:49 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:49 loop is 0
+2022/08/02 16:51:49 log is {1000 8 4}
+2022/08/02 16:51:49 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:49 当前index是: 4
+2022/08/02 16:51:49 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:49 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:49 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:49 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:49 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:49 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:49 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:49 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:49 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:49 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:49 server 3 receive commit
+2022/08/02 16:51:49 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:49 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:49 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:49 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:49 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:49 server 1 receive commit
+2022/08/02 16:51:49 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:49 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:49 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:49 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3}]
+2022/08/02 16:51:49 server 4 receive commit
+2022/08/02 16:51:49 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 8 3} {1000 8 4}]
+2022/08/02 16:51:49 server 4 receive commit
+2022/08/02 16:51:49 server 4 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:49 server 4 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:49 server 4 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:49 server 0 receive commit
+2022/08/02 16:51:49 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:49 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:49 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:49 server 0 receive commit
+2022/08/02 16:51:49 server 1 receive commit
+2022/08/02 16:51:49 server 2 receive commit
+2022/08/02 16:51:49 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:51:49 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:51:49 server 3 receive commit
+2022/08/02 16:51:49 server 2 receive commit
+2022/08/02 16:51:49 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:49 server 2 log length is 5, commit index is 3, args index is 4
+panic: runtime error: index out of range [5] with length 5
+
+goroutine 20459 [running]:
+6.824/raft.(*Raft).CommitLog(0xc000136380, 0xc0010925a0, 0x0?)
+	/home/addr/project/6.824/src/raft/raft.go:523 +0x25e
+reflect.Value.call({0xc00006a2a0?, 0xc00000e6b8?, 0xc000bc1b10?}, {0x616399, 0x4}, {0xc000bc1c68, 0x3, 0xc000bc1b40?})
+	/opt/go/src/reflect/value.go:556 +0x845
+reflect.Value.Call({0xc00006a2a0?, 0xc00000e6b8?, 0xc000a98c58?}, {0xc000bc1c68, 0x3, 0x3})
+	/opt/go/src/reflect/value.go:339 +0xbf
+6.824/labrpc.(*Service).dispatch(0xc000158200, {0x61896e, 0x9}, {{0x5d7d40, 0xc00005f8e0}, {0x618969, 0xe}, {0x661fc0, 0x5cf1a0}, {0xc000b92680, ...}, ...})
+	/home/addr/project/6.824/src/labrpc/labrpc.go:496 +0x38e
+6.824/labrpc.(*Server).dispatch(0xc00000c798, {{0x5d7d40, 0xc00005f8e0}, {0x618969, 0xe}, {0x661fc0, 0x5cf1a0}, {0xc000b92680, 0x39, 0x40}, ...})
+	/home/addr/project/6.824/src/labrpc/labrpc.go:420 +0x1fe
+6.824/labrpc.(*Network).processReq.func1()
+	/home/addr/project/6.824/src/labrpc/labrpc.go:240 +0x58
+created by 6.824/labrpc.(*Network).processReq
+	/home/addr/project/6.824/src/labrpc/labrpc.go:239 +0x1d7
+exit status 2
+FAIL	6.824/raft	3.027s
+
+loop 19
+2022/08/02 16:51:49 
+2022/08/02 16:51:49 
+2022/08/02 16:51:49 
+2022/08/02 16:51:49 
+2022/08/02 16:51:49 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:51:49 loop is 0
+2022/08/02 16:51:49 log is {10 1 1}
+2022/08/02 16:51:49 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:49 当前index是: 1
+2022/08/02 16:51:49 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:49 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:49 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:49 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:51:49 server 3 receive commit
+2022/08/02 16:51:49 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:49 server 0 receive commit
+2022/08/02 16:51:49 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:49 server 2 receive commit
+2022/08/02 16:51:49 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:49 server 4 receive commit
+2022/08/02 16:51:49 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:49 server 1 receive commit
+2022/08/02 16:51:49 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:51:49 commit index is 1
+2022/08/02 16:51:50 server 4 在term 2 当选为leader
+2022/08/02 16:51:50 disconnect server: 0 1 2
+2022/08/02 16:51:50 log is {20 2 2}
+2022/08/02 16:51:50 leader 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:50 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:51:51 server 4 在term 5 当选为leader
+2022/08/02 16:51:52 connect server: 0 1 2
+2022/08/02 16:51:52 server 2 在term 6 当选为leader
+2022/08/02 16:51:52 server 2 在term 7 当选为leader
+2022/08/02 16:51:52 log is {30 7 2}
+2022/08/02 16:51:52 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:52 loop is 0
+2022/08/02 16:51:52 log is {1000 7 3}
+2022/08/02 16:51:52 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:51:52 当前index是: 3
+2022/08/02 16:51:52 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:52 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:52 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:52 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:52 server 4 receive commit
+2022/08/02 16:51:52 server 0 receive commit
+2022/08/02 16:51:52 server 1 receive commit
+2022/08/02 16:51:52 server 2 receive commit
+2022/08/02 16:51:52 server 2 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:51:52 server 2 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:51:52 server 3 receive commit
+2022/08/02 16:51:52 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:51:52 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3}]
+2022/08/02 16:51:52 server 4 receive commit
+2022/08/02 16:51:52 server 0 receive commit
+2022/08/02 16:51:52 server 0 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:51:52 server 0 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:51:52 server 1 receive commit
+2022/08/02 16:51:52 server 1 log length is 4, commit index is 1, args index is 3
+2022/08/02 16:51:52 server 1 log length is 4, commit index is 2, args index is 3
+2022/08/02 16:51:52 server 2 receive commit
+2022/08/02 16:51:52 server 3 receive commit
+2022/08/02 16:51:52 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:51:52 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:53 server 2 在term 8 当选为leader
+2022/08/02 16:51:53 server 2 在term 9 当选为leader
+2022/08/02 16:51:54 server 2 在term 10 当选为leader
+2022/08/02 16:51:54 server 2 在term 11 当选为leader
+2022/08/02 16:51:54 loop is 1
+2022/08/02 16:51:54 log is {1000 11 4}
+2022/08/02 16:51:54 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4}]
+2022/08/02 16:51:54 当前index是: 4
+2022/08/02 16:51:54 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4}]
+2022/08/02 16:51:54 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4}]
+2022/08/02 16:51:54 server 0 receive commit
+2022/08/02 16:51:54 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:54 server 1 receive commit
+2022/08/02 16:51:54 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:54 server 4 receive commit
+2022/08/02 16:51:54 server 2 receive commit
+2022/08/02 16:51:54 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:51:54 server 3 receive commit
+2022/08/02 16:51:54 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:54 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:55 server 2 在term 12 当选为leader
+2022/08/02 16:51:55 server 2 在term 13 当选为leader
+2022/08/02 16:51:56 server 2 在term 14 当选为leader
+2022/08/02 16:51:56 server 2 在term 15 当选为leader
+2022/08/02 16:51:56 loop is 2
+2022/08/02 16:51:56 log is {1000 15 5}
+2022/08/02 16:51:56 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 15 5}]
+2022/08/02 16:51:56 当前index是: 5
+2022/08/02 16:51:56 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:56 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 15 5}]
+2022/08/02 16:51:56 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 15 5}]
+2022/08/02 16:51:56 server 4 receive commit
+2022/08/02 16:51:56 server 0 receive commit
+2022/08/02 16:51:56 server 0 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:56 server 1 receive commit
+2022/08/02 16:51:56 server 1 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:56 server 2 receive commit
+2022/08/02 16:51:56 server 2 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:51:56 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:56 server 3 receive commit
+2022/08/02 16:51:57 server 2 在term 16 当选为leader
+2022/08/02 16:51:58 server 2 在term 17 当选为leader
+2022/08/02 16:51:58 server 2 在term 18 当选为leader
+2022/08/02 16:51:58 loop is 3
+2022/08/02 16:51:58 log is {1000 18 6}
+2022/08/02 16:51:58 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 15 5} {1000 18 6}]
+2022/08/02 16:51:58 当前index是: 6
+2022/08/02 16:51:58 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 15 5} {1000 18 6}]
+2022/08/02 16:51:58 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:58 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 15 5} {1000 18 6}]
+2022/08/02 16:51:58 server 4 receive commit
+2022/08/02 16:51:58 server 3 receive commit
+2022/08/02 16:51:58 server 1 receive commit
+2022/08/02 16:51:58 server 1 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:58 server 0 receive commit
+2022/08/02 16:51:58 server 0 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:58 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:51:58 server 2 receive commit
+2022/08/02 16:51:58 server 2 log length is 7, commit index is 5, args index is 6
+2022/08/02 16:51:59 server 2 在term 19 当选为leader
+2022/08/02 16:51:59 server 2 在term 20 当选为leader
+2022/08/02 16:52:00 server 2 在term 21 当选为leader
+2022/08/02 16:52:00 loop is 4
+2022/08/02 16:52:00 log is {1000 21 7}
+2022/08/02 16:52:00 leader 2 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 15 5} {1000 18 6} {1000 21 7}]
+2022/08/02 16:52:00 当前index是: 7
+2022/08/02 16:52:00 server 1 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 15 5} {1000 18 6} {1000 21 7}]
+2022/08/02 16:52:00 server 0 logs are [{<nil> 0 0} {10 1 1} {30 7 2} {1000 7 3} {1000 11 4} {1000 15 5} {1000 18 6} {1000 21 7}]
+2022/08/02 16:52:00 server 4 receive commit
+2022/08/02 16:52:00 server 3 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:52:00 server 1 receive commit
+2022/08/02 16:52:00 server 1 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:52:00 server 2 receive commit
+2022/08/02 16:52:00 server 2 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:52:00 server 3 receive commit
+2022/08/02 16:52:00 server 4 logs are [{<nil> 0 0} {10 1 1} {30 7 2}]
+2022/08/02 16:52:00 server 0 receive commit
+2022/08/02 16:52:00 server 0 log length is 8, commit index is 6, args index is 7
+2022/08/02 16:52:01 server 2 在term 22 当选为leader
+2022/08/02 16:52:01 server 2 在term 23 当选为leader
+2022/08/02 16:52:02 server 2 在term 24 当选为leader
+2022/08/02 16:52:02 server 2 在term 25 当选为leader
+--- FAIL: TestFailNoAgree2B (13.01s)
+    config.go:616: one(1000) failed to reach agreement
+FAIL
+exit status 1
+FAIL	6.824/raft	13.016s
+
+loop 20
+2022/08/02 16:52:02 
+2022/08/02 16:52:02 
+2022/08/02 16:52:02 
+2022/08/02 16:52:02 
+2022/08/02 16:52:02 
+Test (2B): no agreement if too many followers disconnect ...
+2022/08/02 16:52:02 loop is 0
+2022/08/02 16:52:02 log is {10 1 1}
+2022/08/02 16:52:02 leader 0 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:52:02 当前index是: 1
+2022/08/02 16:52:02 server 2 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:52:02 server 3 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:52:02 server 1 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:52:02 server 4 logs are [{<nil> 0 0} {10 1 1}]
+2022/08/02 16:52:02 server 0 receive commit
+2022/08/02 16:52:02 server 0 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:52:02 server 4 receive commit
+2022/08/02 16:52:02 server 4 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:52:02 server 1 receive commit
+2022/08/02 16:52:02 server 1 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:52:02 server 2 receive commit
+2022/08/02 16:52:02 server 2 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:52:02 server 3 receive commit
+2022/08/02 16:52:02 server 3 log length is 2, commit index is 0, args index is 1
+2022/08/02 16:52:02 commit index is 1
+2022/08/02 16:52:03 server 2 在term 2 当选为leader
+2022/08/02 16:52:03 disconnect server: 3 4 0
+2022/08/02 16:52:03 log is {20 2 2}
+2022/08/02 16:52:03 leader 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:52:03 server 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:52:04 server 2 在term 4 当选为leader
+2022/08/02 16:52:05 connect server: 3 4 0
+2022/08/02 16:52:05 server 1 在term 6 当选为leader
+2022/08/02 16:52:05 log is {30 6 3}
+2022/08/02 16:52:05 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:52:05 loop is 0
+2022/08/02 16:52:05 log is {1000 6 4}
+2022/08/02 16:52:05 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:52:05 当前index是: 4
+2022/08/02 16:52:05 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+labgob warning: Decoding into a non-default variable/field Term may not work
+2022/08/02 16:52:05 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:52:05 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:52:05 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:52:05 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2}]
+2022/08/02 16:52:05 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:52:05 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:52:05 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:52:05 server 4 receive commit
+2022/08/02 16:52:05 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:52:05 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:52:05 server 0 receive commit
+2022/08/02 16:52:05 server 0 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:52:05 server 0 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:52:05 server 0 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:52:05 server 4 receive commit
+2022/08/02 16:52:05 server 1 receive commit
+2022/08/02 16:52:05 server 1 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:52:05 server 1 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:52:05 server 1 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:52:05 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:52:05 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3}]
+2022/08/02 16:52:05 server 2 receive commit
+2022/08/02 16:52:05 server 2 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:52:05 server 2 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:52:05 server 2 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:52:05 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:52:05 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4}]
+2022/08/02 16:52:05 server 3 receive commit
+2022/08/02 16:52:05 server 3 log length is 5, commit index is 1, args index is 4
+2022/08/02 16:52:05 server 3 log length is 5, commit index is 2, args index is 4
+2022/08/02 16:52:05 server 3 log length is 5, commit index is 3, args index is 4
+2022/08/02 16:52:05 server 1 receive commit
+2022/08/02 16:52:05 server 0 receive commit
+2022/08/02 16:52:05 server 2 receive commit
+2022/08/02 16:52:05 server 3 receive commit
+2022/08/02 16:52:06 server 1 在term 7 当选为leader
+2022/08/02 16:52:06 server 1 在term 8 当选为leader
+2022/08/02 16:52:07 server 1 在term 9 当选为leader
+2022/08/02 16:52:07 server 1 在term 10 当选为leader
+2022/08/02 16:52:07 loop is 1
+2022/08/02 16:52:07 log is {1000 10 5}
+2022/08/02 16:52:07 leader 1 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5}]
+2022/08/02 16:52:07 当前index是: 5
+2022/08/02 16:52:07 server 2 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5}]
+2022/08/02 16:52:07 server 0 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5}]
+2022/08/02 16:52:07 server 3 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5}]
+2022/08/02 16:52:07 server 4 logs are [{<nil> 0 0} {10 1 1} {20 2 2} {30 6 3} {1000 6 4} {1000 10 5}]
+2022/08/02 16:52:07 server 0 receive commit
+2022/08/02 16:52:07 server 0 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:52:07 server 2 receive commit
+2022/08/02 16:52:07 server 2 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:52:07 server 3 receive commit
+2022/08/02 16:52:07 server 3 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:52:07 server 4 receive commit
+2022/08/02 16:52:07 server 4 log length is 6, commit index is 1, args index is 5
+2022/08/02 16:52:07 server 4 log length is 6, commit index is 2, args index is 5
+2022/08/02 16:52:07 server 4 log length is 6, commit index is 3, args index is 5
+2022/08/02 16:52:07 server 4 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:52:07 server 1 receive commit
+2022/08/02 16:52:07 server 1 log length is 6, commit index is 4, args index is 5
+2022/08/02 16:52:07 commit index is 5
+  ... Passed --   5.1  5 70389 16869706    5
+PASS
+ok  	6.824/raft	5.063s
+

@@ -63,6 +63,7 @@ type config struct {
 var ncpu_once sync.Once
 
 func make_config(t *testing.T, n int, unreliable bool, snapshot bool) *config {
+	// fmt.Println("make_config")
 	ncpu_once.Do(func() {
 		if runtime.NumCPU() < 2 {
 			fmt.Printf("warning: only one CPU, which may conceal locking bugs\n")
@@ -563,10 +564,13 @@ func (cfg *config) wait(index int, n int, startTerm int) interface{} {
 func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 	t0 := time.Now()
 	starts := 0
+	loop := 0
 	for time.Since(t0).Seconds() < 10 && cfg.checkFinished() == false {
+		log.Printf("loop is %d", loop)
+		loop++
 		// try all the servers, maybe one is the leader.
 		index := -1
-		for si := 0; si < cfg.n; si++ {
+		for si := 0; si < cfg.n; si++ { // 寻找leader
 			starts = (starts + 1) % cfg.n
 			var rf *Raft
 			cfg.mu.Lock()
@@ -578,21 +582,24 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 				index1, _, ok := rf.Start(cmd)
 				if ok {
 					index = index1
+					log.Printf("当前index是: %d", index)
 					break
 				}
 			}
 		}
-
+		
 		if index != -1 {
 			// somebody claimed to be the leader and to have
 			// submitted our command; wait a while for agreement.
 			t1 := time.Now()
 			for time.Since(t1).Seconds() < 2 {
 				nd, cmd1 := cfg.nCommitted(index)
+				// fmt.Println("nd, cmd, cmd1 ", nd, cmd, cmd1)
 				if nd > 0 && nd >= expectedServers {
 					// committed
 					if cmd1 == cmd {
 						// and it was the command we submitted.
+						log.Printf("commit index is %d", index)
 						return index
 					}
 				}
