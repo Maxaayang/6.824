@@ -423,45 +423,45 @@ loop:
 			}
 		}
 
-		// failed := false
-		// cmds := []int{}
-		// for index := range is {
-		// 	cmd := cfg.wait(index, servers, term)
-		// 	if ix, ok := cmd.(int); ok {
-		// 		if ix == -1 {
-		// 			// peers have moved on to later terms
-		// 			// so we can't expect all Start()s to
-		// 			// have succeeded
-		// 			failed = true
-		// 			break
-		// 		}
-		// 		cmds = append(cmds, ix)
-		// 	} else {
-		// 		t.Fatalf("value %v is not an int", cmd)
-		// 	}
-		// }
+		failed := false
+		cmds := []int{}
+		for index := range is {
+			cmd := cfg.wait(index, servers, term)
+			if ix, ok := cmd.(int); ok {
+				if ix == -1 {
+					// peers have moved on to later terms
+					// so we can't expect all Start()s to
+					// have succeeded
+					failed = true
+					break
+				}
+				cmds = append(cmds, ix)
+			} else {
+				t.Fatalf("value %v is not an int", cmd)
+			}
+		}
 
-		// if failed {
-		// 	// avoid leaking goroutines
-		// 	go func() {
-		// 		for range is {
-		// 		}
-		// 	}()
-		// 	continue
-		// }
+		if failed {
+			// avoid leaking goroutines
+			go func() {
+				for range is {
+				}
+			}()
+			continue
+		}
 
-		// for ii := 0; ii < iters; ii++ {
-		// 	x := 100 + ii
-		// 	ok := false
-		// 	for j := 0; j < len(cmds); j++ {
-		// 		if cmds[j] == x {
-		// 			ok = true
-		// 		}
-		// 	}
-		// 	if ok == false {
-		// 		t.Fatalf("cmd %v missing in %v", x, cmds)
-		// 	}
-		// }
+		for ii := 0; ii < iters; ii++ {
+			x := 100 + ii
+			ok := false
+			for j := 0; j < len(cmds); j++ {
+				if cmds[j] == x {
+					ok = true
+				}
+			}
+			if ok == false {
+				t.Fatalf("cmd %v missing in %v", x, cmds)
+			}
+		}
 
 		success = true
 		break
@@ -486,6 +486,7 @@ func TestRejoin2B(t *testing.T) {
 	// leader network failure
 	leader1 := cfg.checkOneLeader()
 	cfg.disconnect(leader1)
+	log.Printf("disconnect leader1: %d", leader1)
 
 	// make old leader try to agree on some entries
 	cfg.rafts[leader1].Start(102)
@@ -495,17 +496,20 @@ func TestRejoin2B(t *testing.T) {
 	// new leader commits, also for index=2
 	cfg.one(103, 2, true)
 
-	// new leader network failure
+	// // new leader network failure
 	leader2 := cfg.checkOneLeader()
 	cfg.disconnect(leader2)
+	log.Printf("disconnect leader2: %d", leader2)
 
-	// old leader connected again
+	// // old leader connected again
 	cfg.connect(leader1)
+	log.Printf("connect leader1: %d", leader1)
 
 	cfg.one(104, 2, true)
 
-	// all together now
+	// // all together now
 	cfg.connect(leader2)
+	log.Printf("connect leader2: %d", leader2)
 
 	cfg.one(105, servers, true)
 
@@ -526,6 +530,7 @@ func TestBackup2B(t *testing.T) {
 	cfg.disconnect((leader1 + 2) % servers)
 	cfg.disconnect((leader1 + 3) % servers)
 	cfg.disconnect((leader1 + 4) % servers)
+	log.Printf("disconnect server %d, %d, %d", (leader1 + 2) % servers, (leader1 + 3) % servers, (leader1 + 4) % servers)
 
 	// submit lots of commands that won't commit
 	for i := 0; i < 50; i++ {
@@ -536,11 +541,13 @@ func TestBackup2B(t *testing.T) {
 
 	cfg.disconnect((leader1 + 0) % servers)
 	cfg.disconnect((leader1 + 1) % servers)
+	log.Printf("disconnect server %d, %d", (leader1 + 0) % servers, (leader1 + 1) % servers)
 
 	// allow other partition to recover
 	cfg.connect((leader1 + 2) % servers)
 	cfg.connect((leader1 + 3) % servers)
 	cfg.connect((leader1 + 4) % servers)
+	log.Printf("connect server %d, %d, %d", (leader1 + 2) % servers, (leader1 + 3) % servers, (leader1 + 4) % servers)
 
 	// lots of successful commands to new group.
 	for i := 0; i < 50; i++ {
@@ -554,6 +561,7 @@ func TestBackup2B(t *testing.T) {
 		other = (leader2 + 1) % servers
 	}
 	cfg.disconnect(other)
+	log.Printf("disconnect server %d", other)
 
 	// lots more commands that won't commit
 	for i := 0; i < 50; i++ {
@@ -565,10 +573,12 @@ func TestBackup2B(t *testing.T) {
 	// bring original leader back to life,
 	for i := 0; i < servers; i++ {
 		cfg.disconnect(i)
+		log.Printf("disconnect server %d", i)
 	}
 	cfg.connect((leader1 + 0) % servers)
 	cfg.connect((leader1 + 1) % servers)
 	cfg.connect(other)
+	log.Printf("connect server %d, %d, %d", (leader1 + 0) % servers, (leader1 + 1) % servers, other)
 
 	// lots of successful commands to new group.
 	for i := 0; i < 50; i++ {
@@ -578,6 +588,7 @@ func TestBackup2B(t *testing.T) {
 	// now everyone
 	for i := 0; i < servers; i++ {
 		cfg.connect(i)
+		log.Printf("connect server %d", i)
 	}
 	cfg.one(rand.Int(), servers, true)
 

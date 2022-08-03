@@ -20,14 +20,15 @@ do
     # go test -run TestRPCBytes2B >> raftB.log
     # go test -run For2023TestFollowerFailure2B >> raftB.log
     # go test -run For2023TestLeaderFailure2B >> raftB.log
-
     # go test -run TestFailAgree2B >> raftB.log
-    # 100 15 3
+
 
     # go test -run TestFailNoAgree2B >> raftB.log
-    go test -run TestConcurrentStarts2B >> raftB.log
+    # 50次不出错
+    # go test -run TestConcurrentStarts2B >> raftB.log
     # go test -run TestRejoin2B >> raftB.log
-    # go test -run TestBackup2B >> raftB.log
+
+    go test -run TestBackup2B >> raftB.log
     # go test -run TestCount2B >> raftB.log
 
     # go test -run 2C >> $log

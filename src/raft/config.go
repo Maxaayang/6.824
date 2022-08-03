@@ -564,10 +564,10 @@ func (cfg *config) wait(index int, n int, startTerm int) interface{} {
 func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 	t0 := time.Now()
 	starts := 0
-	loop := 0
+	// loop := 0
 	for time.Since(t0).Seconds() < 10 && cfg.checkFinished() == false {
-		log.Printf("loop is %d", loop)
-		loop++
+		// log.Printf("loop is %d", loop)
+		// loop++
 		// try all the servers, maybe one is the leader.
 		index := -1
 		for si := 0; si < cfg.n; si++ { // 寻找leader
@@ -596,7 +596,7 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 				nd, cmd1 := cfg.nCommitted(index)
 				// fmt.Println("nd, cmd, cmd1 ", nd, cmd, cmd1)
 				// log.Printf("cfg 的 log: %v", cfg.logs)
-				fmt.Println("cfg 的 log: ", cfg.logs)
+				// fmt.Println("cfg 的 log: ", cfg.logs)
 				if nd > 0 && nd >= expectedServers {
 					// committed
 					if cmd1 == cmd {
