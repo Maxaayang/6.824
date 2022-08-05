@@ -28,8 +28,8 @@ do
     # go test -run TestConcurrentStarts2B >> raftB.log
     # go test -run TestRejoin2B >> raftB.log
 
-    go test -run TestBackup2B >> raftB.log
-    # go test -run TestCount2B >> raftB.log
+    # go test -run TestBackup2B >> raftB.log
+    go test -run TestCount2B >> raftB.log
 
     # go test -run 2C >> $log
     

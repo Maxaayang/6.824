@@ -590,6 +590,7 @@ func TestBackup2B(t *testing.T) {
 		cfg.connect(i)
 		log.Printf("connect server %d", i)
 	}
+	// time.Sleep(10 * RaftElectionTimeout)
 	cfg.one(rand.Int(), servers, true)
 
 	cfg.end()
@@ -610,8 +611,8 @@ func TestCount2B(t *testing.T) {
 	}
 
 	leader := cfg.checkOneLeader()
-
 	total1 := rpcs()
+	log.Printf("total1 rpcs is: %d", total1)
 
 	if total1 > 30 || total1 < 1 {
 		t.Fatalf("too many or few RPCs (%v) to elect initial leader\n", total1)
