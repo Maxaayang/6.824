@@ -596,7 +596,7 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 				nd, cmd1 := cfg.nCommitted(index)
 				// fmt.Println("nd, cmd, cmd1 ", nd, cmd, cmd1)
 				// log.Printf("cfg 的 log: %v", cfg.logs)
-				// fmt.Println("cfg 的 log: ", cfg.logs)
+				fmt.Println("cfg 的 log: ", cfg.logs)
 				if nd > 0 && nd >= expectedServers {
 					// committed
 					if cmd1 == cmd {
