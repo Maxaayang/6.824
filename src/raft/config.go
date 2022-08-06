@@ -171,6 +171,10 @@ func (cfg *config) applier(i int, applyCh chan ApplyMsg) {
 				err_msg = fmt.Sprintf("server %v apply out of order %v", i, m.CommandIndex)
 			}
 			if err_msg != "" {
+				for index := range cfg.logs {
+					log.Printf("cfg.logs[%d] size: %d, logs is %v", index, len(cfg.logs[index]), cfg.logs[index])
+					// log.Printf("cfg.logs[%d]: %v", index, cfg.logs[index])
+				}
 				log.Fatalf("apply error: %v", err_msg)
 				cfg.applyErr[i] = err_msg
 				// keep reading after error so that Raft doesn't block
@@ -597,6 +601,9 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 				// fmt.Println("nd, cmd, cmd1 ", nd, cmd, cmd1)
 				// log.Printf("cfg 的 log: %v", cfg.logs)
 				// fmt.Println("cfg 的 log: ", cfg.logs)
+				// for index := range cfg.logs {
+				// 	log.Printf("cfg.logs[%d] size: %d", index, len(cfg.logs[index]))
+				// }
 				if nd > 0 && nd >= expectedServers {
 					// committed
 					if cmd1 == cmd {

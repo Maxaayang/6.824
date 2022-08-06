@@ -531,7 +531,9 @@ func TestBackup2B(t *testing.T) {
 	cfg.disconnect((leader1 + 3) % servers)
 	cfg.disconnect((leader1 + 4) % servers)
 	log.Printf("disconnect server %d, %d, %d", (leader1 + 2) % servers, (leader1 + 3) % servers, (leader1 + 4) % servers)
-
+	for index := range cfg.logs {
+		log.Printf("cfg.logs[%d] size: %d", index, len(cfg.logs[index]))
+	}
 	// submit lots of commands that won't commit
 	for i := 0; i < 50; i++ {
 		cfg.rafts[leader1].Start(rand.Int())
@@ -542,12 +544,18 @@ func TestBackup2B(t *testing.T) {
 	cfg.disconnect((leader1 + 0) % servers)
 	cfg.disconnect((leader1 + 1) % servers)
 	log.Printf("disconnect server %d, %d", (leader1 + 0) % servers, (leader1 + 1) % servers)
+	for index := range cfg.logs {
+		log.Printf("cfg.logs[%d] size: %d", index, len(cfg.logs[index]))
+	}
 
 	// allow other partition to recover
 	cfg.connect((leader1 + 2) % servers)
 	cfg.connect((leader1 + 3) % servers)
 	cfg.connect((leader1 + 4) % servers)
 	log.Printf("connect server %d, %d, %d", (leader1 + 2) % servers, (leader1 + 3) % servers, (leader1 + 4) % servers)
+	for index := range cfg.logs {
+		log.Printf("cfg.logs[%d] size: %d", index, len(cfg.logs[index]))
+	}
 
 	// lots of successful commands to new group.
 	for i := 0; i < 50; i++ {
@@ -562,6 +570,9 @@ func TestBackup2B(t *testing.T) {
 	}
 	cfg.disconnect(other)
 	log.Printf("disconnect server %d", other)
+	for index := range cfg.logs {
+		log.Printf("cfg.logs[%d] size: %d", index, len(cfg.logs[index]))
+	}
 
 	// lots more commands that won't commit
 	for i := 0; i < 50; i++ {
@@ -579,6 +590,9 @@ func TestBackup2B(t *testing.T) {
 	cfg.connect((leader1 + 1) % servers)
 	cfg.connect(other)
 	log.Printf("connect server %d, %d, %d", (leader1 + 0) % servers, (leader1 + 1) % servers, other)
+	for index := range cfg.logs {
+		log.Printf("cfg.logs[%d] size: %d", index, len(cfg.logs[index]))
+	}
 
 	// lots of successful commands to new group.
 	for i := 0; i < 50; i++ {
@@ -589,6 +603,10 @@ func TestBackup2B(t *testing.T) {
 	for i := 0; i < servers; i++ {
 		cfg.connect(i)
 		log.Printf("connect server %d", i)
+	}
+	for index := range cfg.logs {
+		log.Printf("cfg.logs[%d] size: %d, logs is %v", index, len(cfg.logs[index]), cfg.logs[index])
+		log.Printf("cfg.logs[%d]: %v", index, cfg.logs[index])
 	}
 	// time.Sleep(10 * RaftElectionTimeout)
 	cfg.one(rand.Int(), servers, true)
