@@ -305,7 +305,9 @@ func (cfg *config) start1(i int, applier func(int, chan ApplyMsg)) {
 	// but copy old persister's content so that we always
 	// pass Make() the last persisted state.
 	if cfg.saved[i] != nil {
+		log.Printf("server %d saved1 %v", i, cfg.saved[i])
 		cfg.saved[i] = cfg.saved[i].Copy()
+		// log.Printf("server %d saved2 %v", i, cfg.saved[i])
 
 		snapshot := cfg.saved[i].ReadSnapshot()
 		if snapshot != nil && len(snapshot) > 0 {
@@ -586,7 +588,7 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 				index1, _, ok := rf.Start(cmd)
 				if ok {
 					index = index1
-					log.Printf("当前index是: %d", index)
+					// log.Printf("当前index是: %d", index)
 					break
 				}
 			}
@@ -608,7 +610,7 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 					// committed
 					if cmd1 == cmd {
 						// and it was the command we submitted.
-						log.Printf("commit index is %d", index)
+						// log.Printf("commit index is %d", index)
 						return index
 					}
 				}
