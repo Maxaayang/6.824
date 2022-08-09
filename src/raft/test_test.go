@@ -877,6 +877,7 @@ func TestFigure82C(t *testing.T) {
 
 	nup := servers
 	for iters := 0; iters < 1000; iters++ {
+		// log.Printf("iters: %d", iters)
 		leader := -1
 		for i := 0; i < servers; i++ {
 			if cfg.rafts[i] != nil {
@@ -897,6 +898,7 @@ func TestFigure82C(t *testing.T) {
 
 		if leader != -1 {
 			cfg.crash1(leader)
+			// log.Printf("crash: %d", leader)
 			nup -= 1
 		}
 
@@ -907,6 +909,7 @@ func TestFigure82C(t *testing.T) {
 				cfg.connect(s)
 				nup += 1
 			}
+			// log.Printf("connect %d", s)
 		}
 	}
 
@@ -914,6 +917,7 @@ func TestFigure82C(t *testing.T) {
 		if cfg.rafts[i] == nil {
 			cfg.start1(i, cfg.applier)
 			cfg.connect(i)
+			// log.Printf("connect %d", i)
 		}
 	}
 
@@ -983,6 +987,7 @@ func TestFigure8Unreliable2C(t *testing.T) {
 
 		if leader != -1 && (rand.Int()%1000) < int(RaftElectionTimeout/time.Millisecond)/2 {
 			cfg.disconnect(leader)
+			log.Printf("disconnect %d", leader)
 			nup -= 1
 		}
 
@@ -990,14 +995,24 @@ func TestFigure8Unreliable2C(t *testing.T) {
 			s := rand.Int() % servers
 			if cfg.connected[s] == false {
 				cfg.connect(s)
+				log.Printf("connect %d", s)
 				nup += 1
 			}
 		}
+
+		con := make([]int, 0)
+		for i := 0; i < servers; i++ {
+			if cfg.connected[i] {
+				con = append(con, i)
+			}
+		}
+		log.Printf("当前在线的server %v", con)
 	}
 
 	for i := 0; i < servers; i++ {
 		if cfg.connected[i] == false {
 			cfg.connect(i)
+			log.Printf("last connect %d", i)
 		}
 	}
 
