@@ -846,8 +846,17 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		reply.Success = false
 		reply.LastIndex = rf.lastLogIndex
 		reply.LastTrem = rf.log[rf.lastLogIndex].Term
-		for n := len(rf.log); n > 1; n-- {
-			if n > rf.commitIndex + 2 {
+
+		length := 0
+		if args.PrevLogIndex > rf.lastLogIndex {
+			length = len(rf.log)
+		} else {
+			length = args.PrevLogIndex
+		}
+
+		// for n := len(rf.log); n > 1; n-- {
+		for n := length; n > 1; n-- {
+			if n > rf.commitIndex + 1 {
 				reply.LastIndex = rf.log[n - 2].Index
 				reply.LastTrem = rf.log[n - 2].Term
 				if rf.log[n - 1].Term != rf.log[n - 2].Term {

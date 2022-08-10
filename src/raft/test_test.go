@@ -898,7 +898,7 @@ func TestFigure82C(t *testing.T) {
 
 		if leader != -1 {
 			cfg.crash1(leader)
-			// log.Printf("crash: %d", leader)
+			log.Printf("crash: %d", leader)
 			nup -= 1
 		}
 
@@ -909,8 +909,15 @@ func TestFigure82C(t *testing.T) {
 				cfg.connect(s)
 				nup += 1
 			}
-			// log.Printf("connect %d", s)
+			log.Printf("connect %d", s)
 		}
+		con := make([]int, 0)
+		for i := 0; i < servers; i++ {
+			if cfg.connected[i] {
+				con = append(con, i)
+			}
+		}
+		log.Printf("当前在线的server %v", con)
 	}
 
 	for i := 0; i < servers; i++ {
@@ -1150,7 +1157,8 @@ func internalChurn(t *testing.T, unreliable bool) {
 			t.Fatalf("not an int")
 		}
 	}
-
+	log.Printf("values : %v", values)
+	log.Printf("really : %v", really)
 	for _, v1 := range values {
 		ok := false
 		for _, v2 := range really {

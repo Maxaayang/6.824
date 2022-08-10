@@ -4,7 +4,7 @@
 echo "" > raftC.log
 # echo "" > raftD.log
 int=1
-while (($int<=10))
+while (($int<=1))
 do
     echo "loop "$int
     echo "loop "$int >> raftC.log
@@ -37,7 +37,7 @@ do
     # go test -run TestUnreliableAgree2C >> raftC.log
     # go test -run TestFigure8Unreliable2C >> raftC.log
 
-    # go test -run TestFigure82C >> raftC.log # 10 -> 1
+    go test -run TestFigure82C >> raftC.log # 10 -> 1
     # go test -run TestReliableChurn2C >> raftC.log # 10 -> 3
     # go test -run TestUnreliableChurn2C >> raftC.log # 10 -> 1
 
