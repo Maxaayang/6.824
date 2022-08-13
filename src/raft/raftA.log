@@ -1,25 +1,200 @@
 
 loop 1
-2022/08/07 15:43:10 
-2022/08/07 15:43:10 
-2022/08/07 15:43:10 
-2022/08/07 15:43:10 
+2022/08/13 09:03:39 
+2022/08/13 09:03:39 server 0 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:39 
+2022/08/13 09:03:39 server 1 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:39 
+2022/08/13 09:03:39 server 2 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:39 
 Test (2A): initial election ...
-  ... Passed --   2.5  3 11051 3446679    0
-2022/08/07 15:43:12 
-2022/08/07 15:43:12 
-2022/08/07 15:43:12 
+2022/08/13 09:03:39 server 0 拒绝在term 1 给server 2 投票, 因为已经投给了 0
+2022/08/13 09:03:39 server 2 拒绝在term 1 给server 1 投票, 因为已经投给了 2
+2022/08/13 09:03:39 server 1 拒绝在term 1 给server 2 投票, 因为已经投给了 1
+2022/08/13 09:03:39 server 1 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:39 server 2 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:39 server 0 拒绝在term 1 给server 1 投票, 因为已经投给了 0
+2022/08/13 09:03:39 server 2 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:39 server 1 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:39 server 0 在term 2 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:39 server 2 aggre vote to server 0 at term 2, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:39 server 1 aggre vote to server 0 at term 2, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:39 server 0 在term 2 收到来自 2 的投票, 当前的票数为 2
+2022/08/13 09:03:39 server 0 在term 2 当选为leader, 得票为 2, 总数为 3
+2022/08/13 09:03:39 server 0 在term 2 当前的票数为 0
+2022/08/13 09:03:39 server 2 在term 2 因为超时竞选失败, 变为follower
+2022/08/13 09:03:39 server 1 在term 2 因为超时竞选失败, 变为follower
+  ... Passed --   2.6  3 35212 10844418    0
+2022/08/13 09:03:42 server 0 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:42 
+2022/08/13 09:03:42 server 1 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:42 
+2022/08/13 09:03:42 server 2 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:42 
 Test (2A): election after network failure ...
-  ... Passed --   4.5  3 15922 4112991    0
-2022/08/07 15:43:17 
-2022/08/07 15:43:17 
-2022/08/07 15:43:17 
-2022/08/07 15:43:17 
-2022/08/07 15:43:17 
-2022/08/07 15:43:17 
-2022/08/07 15:43:17 
+2022/08/13 09:03:42 server 2 拒绝在term 1 给server 1 投票, 因为已经投给了 2
+2022/08/13 09:03:42 server 1 拒绝在term 1 给server 2 投票, 因为已经投给了 1
+2022/08/13 09:03:42 server 1 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:42 server 0 拒绝在term 1 给server 1 投票, 因为已经投给了 0
+2022/08/13 09:03:42 server 0 拒绝在term 1 给server 2 投票, 因为已经投给了 0
+2022/08/13 09:03:42 server 2 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:42 server 1 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:42 server 2 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:42 server 1 在term 2 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:42 server 2 aggre vote to server 1 at term 2, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:42 server 0 aggre vote to server 1 at term 2, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:42 server 1 在term 2 收到来自 2 的投票, 当前的票数为 2
+2022/08/13 09:03:42 server 1 在term 2 当选为leader, 得票为 2, 总数为 3
+2022/08/13 09:03:42 server 1 在term 2 当前的票数为 0
+2022/08/13 09:03:42 server 0 在term 2 因为超时竞选失败, 变为follower
+2022/08/13 09:03:42 server 2 在term 2 因为超时竞选失败, 变为follower
+2022/08/13 09:03:43 server 0 在term 3 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:43 server 2 aggre vote to server 0 at term 3, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:43 server 0 在term 3 收到来自 2 的投票, 当前的票数为 2
+2022/08/13 09:03:43 server 0 在term 3 当选为leader, 得票为 2, 总数为 3
+2022/08/13 09:03:44 server 2 在term 4 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:44 server 1 在term 4 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:44 server 2 在term 4 因为超时竞选失败, 变为follower
+2022/08/13 09:03:44 server 2 在term 5 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:45 server 1 在term 4 因为超时竞选失败, 变为follower
+2022/08/13 09:03:45 server 1 在term 5 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:45 server 2 在term 6 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:45 server 2 在term 6 因为超时竞选失败, 变为follower
+2022/08/13 09:03:45 server 2 在term 6 因为超时竞选失败, 变为follower
+2022/08/13 09:03:45 server 1 在term 6 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:45 server 1 在term 6 因为超时竞选失败, 变为follower
+2022/08/13 09:03:45 server 2 在term 7 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:45 server 2 在term 8 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:45 server 2 在term 8 因为超时竞选失败, 变为follower
+2022/08/13 09:03:45 server 1 在term 7 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:45 server 1 在term 7 因为超时竞选失败, 变为follower
+2022/08/13 09:03:46 server 2 在term 9 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:46 server 1 aggre vote to server 2 at term 9, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:46 server 2 在term 9 收到来自 1 的投票, 当前的票数为 2
+2022/08/13 09:03:46 server 2 在term 9 当选为leader, 得票为 2, 总数为 3
+2022/08/13 09:03:46 server 1 在term 9 因为超时竞选失败, 变为follower
+  ... Passed --   4.9  3 57298 14275722    0
+2022/08/13 09:03:46 server 0 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:46 
+2022/08/13 09:03:46 server 1 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:46 
+2022/08/13 09:03:46 server 2 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:46 
+2022/08/13 09:03:46 server 3 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:46 
+2022/08/13 09:03:46 server 4 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:46 
+2022/08/13 09:03:46 server 5 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:46 
+2022/08/13 09:03:46 server 6 在term 1 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:46 
 Test (2A): multiple elections ...
-  ... Passed --   5.4  7 85911 21764183    0
+2022/08/13 09:03:46 server 0 拒绝在term 1 给server 6 投票, 因为已经投给了 0
+2022/08/13 09:03:46 server 4 拒绝在term 1 给server 6 投票, 因为已经投给了 4
+2022/08/13 09:03:46 server 1 拒绝在term 1 给server 6 投票, 因为已经投给了 1
+2022/08/13 09:03:46 server 6 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:46 server 3 拒绝在term 1 给server 6 投票, 因为已经投给了 3
+2022/08/13 09:03:46 server 5 拒绝在term 1 给server 6 投票, 因为已经投给了 5
+2022/08/13 09:03:46 server 6 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:46 server 6 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:46 server 6 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:46 server 6 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:46 server 2 拒绝在term 1 给server 6 投票, 因为已经投给了 2
+2022/08/13 09:03:46 server 6 在term 1 竞选出bug, 当前票数为 1
+2022/08/13 09:03:47 server 3 在term 2 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:47 server 6 aggre vote to server 3 at term 2, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:47 server 1 aggre vote to server 3 at term 2, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:47 server 0 aggre vote to server 3 at term 2, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:47 server 3 在term 2 收到来自 6 的投票, 当前的票数为 2
+2022/08/13 09:03:47 server 4 aggre vote to server 3 at term 2, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:47 server 3 在term 2 收到来自 1 的投票, 当前的票数为 3
+2022/08/13 09:03:47 server 3 在term 2 收到来自 0 的投票, 当前的票数为 4
+2022/08/13 09:03:47 server 3 在term 2 当选为leader, 得票为 4, 总数为 7
+2022/08/13 09:03:47 server 3 在term 2 收到来自 4 的投票, 当前的票数为 5
+2022/08/13 09:03:47 server 2 aggre vote to server 3 at term 2, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:47 server 5 aggre vote to server 3 at term 2, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:47 server 3 在term 2 当前的票数为 0
+2022/08/13 09:03:47 server 3 在term 2 当前的票数为 0
+2022/08/13 09:03:47 server 1 在term 2 因为超时竞选失败, 变为follower
+2022/08/13 09:03:47 server 2 在term 2 因为超时竞选失败, 变为follower
+2022/08/13 09:03:47 server 5 在term 2 因为超时竞选失败, 变为follower
+2022/08/13 09:03:47 server 6 在term 2 因为超时竞选失败, 变为follower
+2022/08/13 09:03:47 server 4 在term 2 因为超时竞选失败, 变为follower
+2022/08/13 09:03:47 server 0 在term 2 因为超时竞选失败, 变为follower
+2022/08/13 09:03:48 server 1 在term 3 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:48 server 0 在term 3 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:48 server 4 aggre vote to server 0 at term 3, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:48 server 6 aggre vote to server 0 at term 3, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:48 server 2 aggre vote to server 0 at term 3, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:48 server 0 在term 3 收到来自 4 的投票, 当前的票数为 2
+2022/08/13 09:03:48 server 0 在term 3 收到来自 2 的投票, 当前的票数为 3
+2022/08/13 09:03:48 server 0 在term 3 收到来自 6 的投票, 当前的票数为 4
+2022/08/13 09:03:48 server 0 在term 3 当选为leader, 得票为 4, 总数为 7
+2022/08/13 09:03:48 server 1 在term 4 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:48 server 1 在term 4 因为超时竞选失败, 变为follower
+2022/08/13 09:03:48 server 5 在term 3 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:48 server 1 在term 5 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:48 server 1 在term 5 因为超时竞选失败, 变为follower
+2022/08/13 09:03:48 server 5 在term 3 因为超时竞选失败, 变为follower
+2022/08/13 09:03:48 server 3 在心跳时退下leader, rf.term is: 2, reply.term is: 3, follower is: 6
+2022/08/13 09:03:48 server 3 在心跳时退下leader, rf.term is: 3, reply.term is: 5, follower is: 1
+2022/08/13 09:03:48 server 1 在term 5 因为超时竞选失败, 变为follower
+2022/08/13 09:03:49 server 1 在term 6 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:49 server 2 aggre vote to server 1 at term 6, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:49 server 4 aggre vote to server 1 at term 6, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:49 server 6 aggre vote to server 1 at term 6, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:49 server 3 aggre vote to server 1 at term 6, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:49 server 1 在term 6 收到来自 4 的投票, 当前的票数为 2
+2022/08/13 09:03:49 server 1 在term 6 收到来自 6 的投票, 当前的票数为 3
+2022/08/13 09:03:49 server 1 在term 6 收到来自 2 的投票, 当前的票数为 4
+2022/08/13 09:03:49 server 1 在term 6 当选为leader, 得票为 4, 总数为 7
+2022/08/13 09:03:49 server 1 在term 6 当前的票数为 0
+2022/08/13 09:03:49 server 5 在term 4 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:49 server 5 在term 4 因为超时竞选失败, 变为follower
+2022/08/13 09:03:49 server 5 在term 5 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:49 server 2 拒绝在term 6 给server 5 投票, 因为term太小, term is 5
+2022/08/13 09:03:49 server 3 拒绝在term 6 给server 5 投票, 因为term太小, term is 5
+2022/08/13 09:03:49 server 6 拒绝在term 6 给server 5 投票, 因为term太小, term is 5
+2022/08/13 09:03:49 server 5 在term 5 因为term较小竞选失败, 变为follower
+2022/08/13 09:03:49 server 5 在term 6 当前的票数为 0
+2022/08/13 09:03:49 server 5 在term 6 当前的票数为 0
+2022/08/13 09:03:49 server 3 在term 7 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:49 server 5 aggre vote to server 3 at term 7, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:49 server 2 aggre vote to server 3 at term 7, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:49 server 3 在term 7 收到来自 5 的投票, 当前的票数为 2
+2022/08/13 09:03:49 server 3 在term 7 收到来自 2 的投票, 当前的票数为 3
+2022/08/13 09:03:49 server 6 aggre vote to server 3 at term 7, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:49 server 3 在term 7 收到来自 6 的投票, 当前的票数为 4
+2022/08/13 09:03:49 server 3 在term 7 当选为leader, 得票为 4, 总数为 7
+2022/08/13 09:03:50 server 4 在term 7 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:50 server 0 在心跳时退下leader, rf.term is: 6, reply.term is: 7, follower is: 4
+2022/08/13 09:03:50 server 1 在心跳时退下leader, rf.term is: 6, reply.term is: 7, follower is: 4
+2022/08/13 09:03:50 server 5 在term 7 因为超时竞选失败, 变为follower
+2022/08/13 09:03:50 server 4 在term 7 因为超时竞选失败, 变为follower
+2022/08/13 09:03:50 server 0 在term 8 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:50 server 1 aggre vote to server 0 at term 8, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:50 server 5 aggre vote to server 0 at term 8, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:50 server 0 在term 8 收到来自 1 的投票, 当前的票数为 2
+2022/08/13 09:03:50 server 4 aggre vote to server 0 at term 8, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:50 server 0 在term 8 收到来自 5 的投票, 当前的票数为 3
+2022/08/13 09:03:50 server 0 在term 8 收到来自 4 的投票, 当前的票数为 4
+2022/08/13 09:03:50 server 0 在term 8 当选为leader, 得票为 4, 总数为 7
+2022/08/13 09:03:51 server 3 在心跳时退下leader, rf.term is: 7, reply.term is: 8, follower is: 5
+2022/08/13 09:03:51 server 6 在term 9 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:51 server 0 在心跳时退下leader, rf.term is: 8, reply.term is: 9, follower is: 6
+2022/08/13 09:03:51 server 6 在term 9 因为超时竞选失败, 变为follower
+2022/08/13 09:03:51 server 5 在term 9 请求投票, lastLogIndex 0, lastLogTerm 0, 当前票数为 1
+2022/08/13 09:03:51 server 4 aggre vote to server 5 at term 9, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:51 server 0 aggre vote to server 5 at term 9, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:51 server 2 aggre vote to server 5 at term 9, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:51 server 5 在term 9 收到来自 4 的投票, 当前的票数为 2
+2022/08/13 09:03:51 server 6 aggre vote to server 5 at term 9, server lastLogIndex 0, lastLogTerm 0
+2022/08/13 09:03:51 server 5 在term 9 收到来自 0 的投票, 当前的票数为 3
+2022/08/13 09:03:51 server 5 在term 9 收到来自 2 的投票, 当前的票数为 4
+2022/08/13 09:03:51 server 5 在term 9 收到来自 6 的投票, 当前的票数为 5
+2022/08/13 09:03:51 server 5 在term 9 当选为leader, 得票为 5, 总数为 7
+2022/08/13 09:03:51 server 5 在term 9 当选为leader, 得票为 5, 总数为 7
+  ... Passed --   5.5  7 275498 69375947    0
 PASS
-ok  	6.824/raft	12.569s
+ok  	6.824/raft	13.076s
 

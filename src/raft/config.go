@@ -200,7 +200,7 @@ func (cfg *config) ingestSnap(i int, snapshot []byte, index int) string {
 		return "snapshot Decode() error"
 	}
 	if index != -1 && index != lastIncludedIndex {
-		err := fmt.Sprintf("server %v snapshot doesn't match m.SnapshotIndex", i)
+		err := fmt.Sprintf("server %v snapshot doesn't match m.SnapshotIndex index is %d lastIncludedIndex is %d", i, index, lastIncludedIndex)
 		return err
 	}
 	cfg.logs[i] = map[int]interface{}{}
@@ -588,7 +588,7 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 				index1, _, ok := rf.Start(cmd)
 				if ok {
 					index = index1
-					// log.Printf("当前index是: %d", index)
+					log.Printf("当前index是: %d, cmd: %v", index, cmd)
 					break
 				}
 			}

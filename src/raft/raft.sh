@@ -29,7 +29,7 @@ do
     # go test -run TestBackup2B >> raftB.log
     # go test -run TestCount2B >> raftB.log
 
-    # go test -run 2C >> raftC.log
+    go test -run 2C >> raftC.log
     
     # go test -run TestPersist12C >> raftC.log
     # go test -run TestPersist22C >> raftC.log
@@ -37,7 +37,7 @@ do
     # go test -run TestUnreliableAgree2C >> raftC.log
     # go test -run TestFigure8Unreliable2C >> raftC.log
 
-    go test -run TestFigure82C >> raftC.log # 10 -> 1
+    # go test -run TestFigure82C >> raftC.log # 10 -> 1
     # go test -run TestReliableChurn2C >> raftC.log # 10 -> 3
     # go test -run TestUnreliableChurn2C >> raftC.log # 10 -> 1
 
@@ -45,6 +45,7 @@ do
     # go test -run TestSnapshotBasic2D >> raftD.log
     # go test -run TestSnapshotInstall2D >> raftD.log
     # go test -run TestSnapshotInstallUnreliable2D >> raftD.log
+    
     # go test -run TestSnapshotInstallCrash2D >> raftD.log
     # go test -run TestSnapshotInstallUnCrash2D >> raftD.log
     # go test -run TestSnapshotAllCrash2D >> raftD.log

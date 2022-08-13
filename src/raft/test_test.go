@@ -1193,6 +1193,7 @@ func snapcommon(t *testing.T, name string, disconnect bool, reliable bool, crash
 	cfg.begin(name)
 
 	cfg.one(rand.Int(), servers, true)
+	log.Print("one1")
 	leader1 := cfg.checkOneLeader()
 
 	for i := 0; i < iters; i++ {
@@ -1205,28 +1206,42 @@ func snapcommon(t *testing.T, name string, disconnect bool, reliable bool, crash
 
 		if disconnect {
 			cfg.disconnect(victim)
+			log.Printf("disconnect %d", victim)
 			cfg.one(rand.Int(), servers-1, true)
 		}
+		// crash重连之后就只剩下快照了
 		if crash {
 			cfg.crash1(victim)
+			log.Printf("crash %d", victim)
 			cfg.one(rand.Int(), servers-1, true)
 		}
-
+		log.Print("disconnect and crash")
 		// perhaps send enough to get a snapshot
 		nn := (SnapShotInterval / 2) + (rand.Int() % SnapShotInterval)
 		for i := 0; i < nn; i++ {
 			cfg.rafts[sender].Start(rand.Int())
 		}
-
+		log.Print("start nn")
+		log.Print("disconnect and crash connect")
+		con := make([]int, 0)
+		for i := 0; i < servers; i++ {
+			if cfg.connected[i] {
+				con = append(con, i)
+			}
+		}
+		log.Printf("当前在线的server %v", con)
 		// let applier threads catch up with the Start()'s
 		if disconnect == false && crash == false {
 			// make sure all followers have caught up, so that
 			// an InstallSnapshot RPC isn't required for
 			// TestSnapshotBasic2D().
 			cfg.one(rand.Int(), servers, true)
+			// cfg.one(rand.Int(), servers, false)
+			log.Print("one2")
 		} else {
 			cfg.one(rand.Int(), servers-1, true)
 		}
+		log.Print("cfg one")
 
 		if cfg.LogSize() >= MAXLOGSIZE {
 			cfg.t.Fatalf("Log size too large")
@@ -1235,15 +1250,25 @@ func snapcommon(t *testing.T, name string, disconnect bool, reliable bool, crash
 			// reconnect a follower, who maybe behind and
 			// needs to rceive a snapshot to catch up.
 			cfg.connect(victim)
+			log.Printf("connect %d", victim)
 			cfg.one(rand.Int(), servers, true)
 			leader1 = cfg.checkOneLeader()
 		}
 		if crash {
 			cfg.start1(victim, cfg.applierSnap)
 			cfg.connect(victim)
+			log.Printf("connect %d", victim)
 			cfg.one(rand.Int(), servers, true)
 			leader1 = cfg.checkOneLeader()
 		}
+		log.Print("disconnect and crash connect")
+		coni := make([]int, 0)
+		for i := 0; i < servers; i++ {
+			if cfg.connected[i] {
+				coni = append(coni, i)
+			}
+		}
+		log.Printf("当前在线的server %v", coni)
 	}
 	cfg.end()
 }
