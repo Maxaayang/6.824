@@ -361,7 +361,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 			return
 		} else if rf.lastLogTerm == args.LastLogTerm && rf.lastLogIndex > args.LastLogIndex {
 			rf.disagreeVote(args, reply)
-			log.Printf("server %d 拒绝在term %d 给server %d 投票, lastLogIndex", rf.me, rf.currentTerm, args.CondidateId)
+			log.Printf("server %d 拒绝在term %d 给server %d 投票, 因为lastLogIndex太小, lastLogIndex %d %d", rf.me, rf.currentTerm, args.CondidateId, rf.lastLogIndex, args.LastLogIndex)
 			rf.mu.Unlock()
 			return
 		}

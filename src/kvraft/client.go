@@ -1,12 +1,19 @@
 package kvraft
 
-import "6.824/labrpc"
-import "crypto/rand"
-import "math/big"
+import (
+	"crypto/rand"
+	"log"
+	"math/big"
+
+	"6.824/labrpc"
+)
 
 
 type Clerk struct {
 	servers []*labrpc.ClientEnd
+	leaderId int
+	clientId int64
+	commandId int
 	// You will have to modify this struct.
 }
 
@@ -20,6 +27,8 @@ func nrand() int64 {
 func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	ck := new(Clerk)
 	ck.servers = servers
+	ck.clientId = nrand()
+	ck.commandId = 1
 	// You'll have to add code here.
 	return ck
 }
@@ -39,7 +48,10 @@ func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 func (ck *Clerk) Get(key string) string {
 
 	// You will have to modify this function.
-	return ""
+	var value string
+	ck.PutAppendGet(key, &value, GetCommand)
+	// log.Printf("server Get Key %v, Value %v", key, value)
+	return value
 }
 
 //
@@ -52,13 +64,28 @@ func (ck *Clerk) Get(key string) string {
 // must match the declared types of the RPC handler function's
 // arguments. and reply must be passed as a pointer.
 //
-func (ck *Clerk) PutAppend(key string, value string, op string) {
+func (ck *Clerk) PutAppendGet(key string, value *string, op CommandType) {
 	// You will have to modify this function.
+	args := PutAppendGetArgs{ck.clientId, ck.commandId, key, *value, op}
+	reply := PutAppendGetReply{}
+	log.Printf("server PutAppendGet send args %v, reply %v", args, reply)
+	for {
+		if !ck.servers[ck.leaderId].Call("KVServer.PutAppendGet", &args, &reply) || reply.Err == ErrWrongLeader {
+			ck.leaderId = (ck.leaderId + 1) % len(ck.servers)
+			continue
+		}
+		ck.commandId++
+		*value = reply.Value
+		break
+	}
+	log.Printf("server PutAppendGet get args %v, reply %v", args, reply)
 }
 
 func (ck *Clerk) Put(key string, value string) {
-	ck.PutAppend(key, value, "Put")
+	// log.Printf("server Put Key %v, Value %v", key, value)
+	ck.PutAppendGet(key, &value, PutCommand)
 }
 func (ck *Clerk) Append(key string, value string) {
-	ck.PutAppend(key, value, "Append")
+	ck.PutAppendGet(key, &value, AppendCommand)
+	// log.Printf("server Append Key %v, Value %v", key, value)
 }

@@ -1,16 +1,20 @@
 package kvraft
 
-import "6.824/porcupine"
-import "6.824/models"
-import "testing"
-import "strconv"
-import "time"
-import "math/rand"
-import "strings"
-import "sync"
-import "sync/atomic"
-import "fmt"
-import "io/ioutil"
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
+	"math/rand"
+	"strconv"
+	"strings"
+	"sync"
+	"sync/atomic"
+	"testing"
+	"time"
+
+	"6.824/models"
+	"6.824/porcupine"
+)
 
 // The tester generously allows solutions to complete elections in one second
 // (much more than the paper's range of timeouts).
@@ -44,13 +48,14 @@ func (log *OpLog) Read() []porcupine.Operation {
 var t0 = time.Now()
 
 // get/put/putappend that keep counts
-func Get(cfg *config, ck *Clerk, key string, log *OpLog, cli int) string {
+func Get(cfg *config, ck *Clerk, key string, alog *OpLog, cli int) string {
 	start := int64(time.Since(t0))
 	v := ck.Get(key)
+	log.Printf("Get Key %v", key)
 	end := int64(time.Since(t0))
 	cfg.op()
-	if log != nil {
-		log.Append(porcupine.Operation{
+	if alog != nil {
+		alog.Append(porcupine.Operation{
 			Input:    models.KvInput{Op: 0, Key: key},
 			Output:   models.KvOutput{Value: v},
 			Call:     start,
@@ -62,13 +67,16 @@ func Get(cfg *config, ck *Clerk, key string, log *OpLog, cli int) string {
 	return v
 }
 
-func Put(cfg *config, ck *Clerk, key string, value string, log *OpLog, cli int) {
+func Put(cfg *config, ck *Clerk, key string, value string, alog *OpLog, cli int) {
 	start := int64(time.Since(t0))
 	ck.Put(key, value)
+	log.Printf("Put Key %v Value %v", key, value)
 	end := int64(time.Since(t0))
+	// log.Printf("Put end: %d", end)
 	cfg.op()
-	if log != nil {
-		log.Append(porcupine.Operation{
+	// log.Printf("Put cfg.op end")
+	if alog != nil {
+		alog.Append(porcupine.Operation{
 			Input:    models.KvInput{Op: 1, Key: key, Value: value},
 			Output:   models.KvOutput{},
 			Call:     start,
@@ -76,15 +84,17 @@ func Put(cfg *config, ck *Clerk, key string, value string, log *OpLog, cli int) 
 			ClientId: cli,
 		})
 	}
+	// log.Print("Put end")
 }
 
-func Append(cfg *config, ck *Clerk, key string, value string, log *OpLog, cli int) {
+func Append(cfg *config, ck *Clerk, key string, value string, alog *OpLog, cli int) {
 	start := int64(time.Since(t0))
 	ck.Append(key, value)
+	log.Printf("Append Key %v Value %v", key, value)
 	end := int64(time.Since(t0))
 	cfg.op()
-	if log != nil {
-		log.Append(porcupine.Operation{
+	if alog != nil {
+		alog.Append(porcupine.Operation{
 			Input:    models.KvInput{Op: 2, Key: key, Value: value},
 			Output:   models.KvOutput{},
 			Call:     start,
@@ -244,6 +254,7 @@ func GenericTest(t *testing.T, part string, nclients int, nservers int, unreliab
 	opLog := &OpLog{}
 
 	ck := cfg.makeClient(cfg.All())
+	log.Print("makeClient")
 
 	done_partitioner := int32(0)
 	done_clients := int32(0)
@@ -265,6 +276,7 @@ func GenericTest(t *testing.T, part string, nclients int, nservers int, unreliab
 			if !randomkeys {
 				Put(cfg, myck, strconv.Itoa(cli), last, opLog, cli)
 			}
+			log.Printf("random start")
 			for atomic.LoadInt32(&done_clients) == 0 {
 				var key string
 				if randomkeys {
@@ -295,6 +307,7 @@ func GenericTest(t *testing.T, part string, nclients int, nservers int, unreliab
 				}
 			}
 		})
+		log.Print("partitions")
 
 		if partitions {
 			// Allow the clients to perform some operations without interruption
@@ -405,6 +418,7 @@ func GenericTestSpeed(t *testing.T, part string, maxraftstate int) {
 	start := time.Now()
 	for i := 0; i < numOps; i++ {
 		ck.Append("x", "x 0 "+strconv.Itoa(i)+" y")
+		log.Printf("numOps: %d", i)
 	}
 	dur := time.Since(start)
 

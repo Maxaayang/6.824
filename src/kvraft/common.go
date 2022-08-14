@@ -4,26 +4,40 @@ const (
 	OK             = "OK"
 	ErrNoKey       = "ErrNoKey"
 	ErrWrongLeader = "ErrWrongLeader"
+
+)
+
+type CommandType string
+
+const (
+	GetCommand = "Get"
+	PutCommand = "Put"
+	AppendCommand = "Append"
 )
 
 type Err string
 
 // Put or Append
-type PutAppendArgs struct {
+type PutAppendGetArgs struct {
+	ClientId int64
+	CommandId int
 	Key   string
 	Value string
-	Op    string // "Put" or "Append"
+	Op    CommandType // "Put" or "Append"
 	// You'll have to add definitions here.
 	// Field names must start with capital letters,
 	// otherwise RPC will break.
 }
 
-type PutAppendReply struct {
+type PutAppendGetReply struct {
 	Err Err
+	Value string
 }
 
 type GetArgs struct {
 	Key string
+	ClientId int64
+	CommandId int
 	// You'll have to add definitions here.
 }
 
